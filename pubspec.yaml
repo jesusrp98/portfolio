@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
 
   google_fonts:
+  font_awesome_flutter:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:
