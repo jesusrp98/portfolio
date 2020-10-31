@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FadedBackground extends StatelessWidget {
-  final String imageUrl;
+  final String image;
 
-  const FadedBackground({Key key, this.imageUrl}) : super(key: key);
+  const FadedBackground({Key key, this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,8 @@ class FadedBackground extends StatelessWidget {
           child: SizedBox(),
         ),
         Expanded(
-          child: Image.network(
-            imageUrl,
+          child: Image.asset(
+            image,
             fit: BoxFit.cover,
             height: double.infinity,
           ),

@@ -44,8 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           FadedBackground(
-            imageUrl:
-                'https://lh3.googleusercontent.com/nH20UXcnThZYJc6GpBIS4eOZF2DD5ivMwRB6H9Y1JWkPz5rip-OGyTrUaFEi-pNOcL9rJKhzZUQi6urNGI5xgcVaFPqMSdW3RSRvngRWflvaTbakGhAPr0dUvb0AuPsSmHNUneZ8DBQxjksSwwn9VmQ0ZvR-7giHq2hkPF4UkOiP0Z1pG5wIedoBJu2V2tHu4E5u7cWz4ewd387_orrTbwutzU4ATdcYmdEIrzBkHrcSqywDRm9ikEG-wwFfvHonYHmRrDOh97OnnZeQclWXOwiNfzPP0jX5HwwbNqhRMJIvwsoj7LGrpT5tsNf5NtxvFYAknpd8PQhbpD8wZBTOnBETpXksZqAH15J9aOIn2Dw5yDvv_UKx90i_cwOVCDV71EucFVcw0eOXp3p_ONgHAVHCZXm5yD0y2tr8tsUxFL8I8rZNWt1FONGZr37LMEoY66o3urgLnLiE9tqM_KPnDPfPacJVglf4ZVSo8TN73VOz-4gXF19Pa1h7ojqUvxRQuooM0vMhsSTwO5IG_HZ4cO-OHYFzFo36Fjli0TlFfzr1SY6tEXEiJf_K5YSKOwhg4pi69Rg0D9xJvERUrjwnyAsqtLvks610tIdaqS69Q_vBypmi_SsfT5D1KybnsVf7YBuu_5VlECbdjHyvE9QoCpIQbuayNyKb0LDpzrh0IjiZH_N-xNVpJizuVeF7XgA=w1756-h1317-no?authuser=0',
+            image: 'assets/images/who.jpg',
           ),
           Container(
             padding: EdgeInsets.all(64),
