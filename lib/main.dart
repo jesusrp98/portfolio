@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/ui/pages/index.dart';
 
-import 'ui/widgets/index.dart';
 import 'services/index.dart';
+import 'ui/pages/index.dart';
+import 'ui/widgets/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,9 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Jesus Rodriguez',
       theme: ThemeData(
         brightness: Brightness.dark,
-        textTheme: GoogleFonts.robotoMonoTextTheme(
-          ThemeData.dark().textTheme,
-        ),
+        fontFamily: 'RobotoMono',
       ),
       home: MyHomePage(),
     );
@@ -76,36 +73,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Jesus',
+                      'Jesus\nRodriguez',
                       style: TextStyle(
-                        fontSize: 72,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'Rodriguez',
-                      style: TextStyle(
-                        fontSize: 72,
+                        fontSize: 92,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Flutter developer',
+                      'Flutter developer\nUX/UI designer',
                       style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 40,
                         color: Colors.white54,
                       ),
                     ),
-                    Text(
-                      'UX/UI designer',
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.white54,
-                      ),
-                    )
                   ],
                 ),
                 Row(
@@ -114,23 +96,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       tooltip: 'Twitter',
                       onPressed: () =>
                           'https://twitter.com/jesusrp98'.launchURL(),
-                      iconSize: 40,
+                      iconSize: 50,
                       icon: FaIcon(FontAwesomeIcons.twitter),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: 24),
                     IconButton(
                       tooltip: 'GitHub',
                       onPressed: () =>
                           'https://github.com/jesusrp98/'.launchURL(),
-                      iconSize: 40,
+                      iconSize: 50,
                       icon: FaIcon(FontAwesomeIcons.github),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: 24),
                     IconButton(
                       tooltip: 'Email',
                       onPressed: () =>
                           'mailto:jesusrope98@outlook.com'.launchURL(),
-                      iconSize: 40,
+                      iconSize: 50,
                       icon: Icon(Icons.email),
                     ),
                   ],
