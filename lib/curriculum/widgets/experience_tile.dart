@@ -22,16 +22,15 @@ class ExperienceTile extends StatelessWidget {
           title: Text(
             experience.company.toUpperCase(),
             style: const TextStyle(
-              fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
           ),
           subtitle: Text(
             experience.position,
             style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
               color: Theme.of(context).textTheme.caption?.color,
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
             ),
           ),
           trailing: DecoratedBox(
@@ -55,8 +54,8 @@ class ExperienceTile extends StatelessWidget {
           Text(
             '· $task',
             style: TextStyle(
-              fontSize: 16,
               color: Theme.of(context).textTheme.caption?.color,
+              fontSize: 16,
             ),
           )
       ],

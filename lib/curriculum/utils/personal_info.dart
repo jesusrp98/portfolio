@@ -4,7 +4,7 @@ class PersonalInfo {
   const PersonalInfo._();
 
   static const description =
-      'I’m focused on frontend and mobile development. My greatest passions are UX/UI design and the open-source community. Love communicate and collaborate with other people around the globe.';
+      'I\'m focused on frontend and mobile development. My greatest passions are UX/UI design and the open-source community. Love communicate and collaborate with other people around the globe.';
 
   static const experience = [
     Experience(

@@ -6,7 +6,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final router = AppRouter.initialize(context);
+    final router = AppRouter.initialize();
 
     return MaterialApp.router(
       title: 'portfolio',
