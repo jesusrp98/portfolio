@@ -1,18 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/curriculum/pages/curriculum_page.dart';
+import 'package:portfolio/app.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
-void main() => runApp(const PortfolioApp());
-
-class PortfolioApp extends StatelessWidget {
-  const PortfolioApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'portfolio',
-      home: const CurriculumPage(),
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Rubik'),
-    );
-  }
+void main() {
+  usePathUrlStrategy();
+  runApp(const App());
 }

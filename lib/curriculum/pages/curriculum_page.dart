@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/curriculum/utils/experience.dart';
+import 'package:portfolio/curriculum/utils/personal_info.dart';
 import 'package:portfolio/curriculum/widgets/details_tile.dart';
 import 'package:portfolio/curriculum/widgets/experience_tile.dart';
 import 'package:portfolio/utils/list_gutter.dart';
+import 'package:portfolio/utils/urls.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class CurriculumPage extends StatelessWidget {
   const CurriculumPage({super.key});
@@ -33,7 +35,10 @@ class CurriculumPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8).copyWith(top: 24),
+                        padding: const EdgeInsets.all(8).copyWith(
+                          top: 24,
+                          bottom: 48,
+                        ),
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                             image: const DecorationImage(
@@ -48,59 +53,55 @@ class CurriculumPage extends StatelessWidget {
                           child: const SizedBox.square(dimension: 192),
                         ),
                       ),
-                      const SizedBox(height: 40),
-                      const Text(
-                        'EXPERTIESE',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
+                      ...[
+                        const Text(
+                          'EXPERTIESE',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/figma.png',
-                        title: 'Figma',
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/flutter.png',
-                        title: 'Flutter',
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/firebase.png',
-                        title: 'Firebase',
-                      ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/figma.png',
+                          title: 'Figma',
+                        ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/flutter.png',
+                          title: 'Flutter',
+                        ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/firebase.png',
+                          title: 'Firebase',
+                        ),
+                      ].separate(),
                       const SizedBox(height: 24),
-                      const Text(
-                        'EDUCATION',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
+                      ...[
+                        const Text(
+                          'EDUCATION',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/uco.png',
-                        title: 'Computer Engineer',
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/spain.png',
-                        title: 'Spanish',
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/uk.png',
-                        title: 'English',
-                      ),
-                      const SizedBox(height: 12),
-                      DetailsTile.asset(
-                        imagePath: 'assets/images/germany.png',
-                        title: 'German',
-                      ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/uco.png',
+                          title: 'Computer Engineer',
+                        ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/spain.png',
+                          title: 'Spanish',
+                        ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/uk.png',
+                          title: 'English',
+                        ),
+                        DetailsTile.asset(
+                          imagePath: 'assets/images/germany.png',
+                          title: 'German',
+                        ),
+                      ].separate(),
                     ],
                   ),
                 ),
@@ -149,17 +150,17 @@ class CurriculumPage extends StatelessWidget {
                             IconButton(
                               tooltip: 'Email',
                               icon: const Icon(Icons.email_rounded),
-                              onPressed: () {},
+                              onPressed: () => launchUrlString(Urls.email),
                             ),
                             IconButton(
                               tooltip: 'LinkedIn',
                               icon: const Icon(FontAwesomeIcons.linkedin),
-                              onPressed: () {},
+                              onPressed: () => launchUrlString(Urls.linkedIn),
                             ),
                             IconButton(
-                              tooltip: 'Email',
+                              tooltip: 'GitHub',
                               icon: const Icon(FontAwesomeIcons.github),
-                              onPressed: () {},
+                              onPressed: () => launchUrlString(Urls.gitHub),
                             ),
                           ].separate(space: 24),
                         ),
@@ -174,22 +175,25 @@ class CurriculumPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'ABOUT ME',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
+                            ...[
+                              const Text(
+                                'ABOUT ME',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              'I’m focused on frontend and mobile development. My greatest passions are UX/UI design and the open-source community. Love communicate and collaborate with other people around the globe.',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color:
-                                    Theme.of(context).textTheme.caption?.color,
+                              Text(
+                                PersonalInfo.description,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .caption
+                                      ?.color,
+                                ),
                               ),
-                            ),
+                            ].separate(),
                             const SizedBox(height: 32),
                             const Text(
                               'PROJECTS',
@@ -206,16 +210,15 @@ class CurriculumPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'EXPERIENCE',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 12),
                             ...[
-                              for (final experience in allExperiencies)
+                              const Text(
+                                'EXPERIENCE',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              for (final experience in PersonalInfo.experience)
                                 ExperienceTile(experience: experience),
                             ].separate()
                           ],
