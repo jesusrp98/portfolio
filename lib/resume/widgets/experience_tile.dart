@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/curriculum/models/experience.dart';
+import 'package:portfolio/resume/models/experience.dart';
 
 class ExperienceTile extends StatelessWidget {
   final Experience experience;

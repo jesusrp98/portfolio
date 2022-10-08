@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/router/app_router.dart';
+import 'package:portfolio/utils/app_styles.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,7 +12,9 @@ class App extends StatelessWidget {
     return MaterialApp.router(
       title: 'portfolio',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Rubik'),
+      theme: AppStyles.light,
+      darkTheme: AppStyles.dark,
+      themeMode: ThemeMode.system,
       routerDelegate: router.routerDelegate,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,

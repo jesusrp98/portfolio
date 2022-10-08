@@ -1,4 +1,4 @@
-import 'package:portfolio/curriculum/models/experience.dart';
+import 'package:portfolio/resume/models/experience.dart';
 
 class PersonalInfo {
   const PersonalInfo._();
