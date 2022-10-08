@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/portfolio_app_bar.dart';
 import 'package:portfolio/widgets/portfolio_scaffold.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -29,8 +30,11 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => Text(index.toString()),
+        delegate: SliverChildListDelegate(
+          [
+            for (final i in List.generate(64, (i) => i)) Text(i.toString()),
+            const FooterBar(),
+          ],
         ),
       ),
     );
