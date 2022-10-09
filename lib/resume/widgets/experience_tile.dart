@@ -36,7 +36,14 @@ class ExperienceTile extends StatelessWidget {
           trailing: DecoratedBox(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(99),
-              color: Colors.black.withOpacity(0.08),
+              border: Border.all(
+                color: Theme.of(context)
+                    .textTheme
+                    .caption!
+                    .color!
+                    .withOpacity(0.16),
+                width: 2,
+              ),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),

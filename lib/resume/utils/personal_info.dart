@@ -13,18 +13,22 @@ class PersonalInfo {
       position: 'Flutter Developer',
       period: '2022',
       tasks: [
-        'Implement complex social media features, like chat and news feed.',
-        'Worked with CI/CD systems, like Codemagic and Fastlane.',
+        'Implemented complex social media features, like real-time chat and news feed.',
+        'Worked hand-by-hand with the design people when developing new features.',
+        'Improved local and push notifications on both iOS and Android.',
+        'Reworked navigation system, in order to support deep links.',
       ],
     ),
     Experience(
       imagePath: 'assets/images/reflectly.jpg',
       company: 'Reflectly',
       position: 'Flutter Developer',
-      period: '2021',
+      period: '2021 - 2022',
       tasks: [
-        'Develop delighting new features in Flutter, focused on user experience and design.',
-        'Research user data with Amplitude analytics.',
+        'Used Firebase to store user data, and making it accessible offline.',
+        'Implemented complex designs and fluent animations.',
+        'Developed new features using low-level Flutter.',
+        'Researched user data with Amplitude analytics.',
       ],
     ),
     Experience(
@@ -33,8 +37,22 @@ class PersonalInfo {
       position: 'Flutter Developer',
       period: '2020 - 2021',
       tasks: [
-        'Develop new features in Flutter & deploy them to existing native mobile apps.',
-        'Manage app releases through production channels.',
+        'Developed new features in Flutter & deploy them to existing native mobile apps.',
+        'Managed app releases through production channels.',
+      ],
+    ),
+    Experience(
+      imagePath: 'assets/images/ronald_mcdonald.png',
+      company: 'Ronald McDonald Foundation',
+      position: 'Freelancer',
+      period: '2020 - 2021',
+      tasks: [
+        'Used Firebase service to store user information.',
+        'Developed mobile app and CMS web page using Flutter.',
+        'Released mobile app to both App Store and Google Play.',
+        'Implemented real-time chat between users of the platform.',
+        'Acted as a product manager and managed team of developers.',
+        'Used GitHub Actions to deploy web page to Firebase Hosting.'
       ],
     ),
     Experience(
@@ -43,8 +61,8 @@ class PersonalInfo {
       position: 'Software Developer',
       period: '2020',
       tasks: [
-        'Worked on IBM Watson-based NLP systems.',
         'Developed React-based frontend for chatbot management system.',
+        'Worked on IBM Watson-based NLP systems.',
       ],
     ),
   ];

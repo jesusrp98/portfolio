@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsTile extends StatelessWidget {
   final Widget leading;
@@ -10,14 +11,14 @@ class DetailsTile extends StatelessWidget {
     required this.title,
   });
 
-  factory DetailsTile.asset({
-    required String imagePath,
+  factory DetailsTile.svg({
+    required String assetPath,
     required String title,
   }) {
     return DetailsTile(
       leading: Padding(
         padding: const EdgeInsets.all(4),
-        child: Image.asset(imagePath),
+        child: SvgPicture.asset(assetPath),
       ),
       title: title,
     );
@@ -29,11 +30,12 @@ class DetailsTile extends StatelessWidget {
       children: [
         SizedBox.square(
           dimension: 32,
-          child: ClipOval(
-            child: DecoratedBox(
-              decoration: const BoxDecoration(color: Colors.white),
-              child: leading,
+          child: DecoratedBox(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
             ),
+            child: leading,
           ),
         ),
         const SizedBox(width: 12),

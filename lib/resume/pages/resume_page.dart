@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/resume/utils/personal_info.dart';
 import 'package:portfolio/resume/widgets/details_tile.dart';
 import 'package:portfolio/resume/widgets/experience_tile.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/list_gutter.dart';
-import 'package:portfolio/utils/urls.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:portfolio/widgets/contact_actions.dart';
 
 class ResumePage extends StatelessWidget {
   const ResumePage({super.key});
@@ -63,17 +61,29 @@ class ResumePage extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/figma.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/figma.svg',
                           title: 'Figma',
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/flutter.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/flutter.svg',
                           title: 'Flutter',
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/firebase.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/firebase.svg',
                           title: 'Firebase',
+                        ),
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/linux.svg',
+                          title: 'Linux',
+                        ),
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/amplitude.svg',
+                          title: 'Amplitude',
+                        ),
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/app_store.svg',
+                          title: 'App Store Connect',
                         ),
                       ].separate(),
                       const SizedBox(height: 24),
@@ -86,20 +96,20 @@ class ResumePage extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/uco.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/uco.svg',
                           title: 'Computer Engineer',
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/spain.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/spanish.svg',
                           title: 'Spanish',
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/uk.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/english.svg',
                           title: 'English',
                         ),
-                        DetailsTile.asset(
-                          imagePath: 'assets/images/germany.png',
+                        DetailsTile.svg(
+                          assetPath: 'assets/images/german.svg',
                           title: 'German',
                         ),
                       ].separate(),
@@ -124,48 +134,21 @@ class ResumePage extends StatelessWidget {
                           const Text(
                             'JESUS RODRIGUEZ',
                             style: TextStyle(
-                              fontSize: 48,
                               fontWeight: FontWeight.w600,
+                              fontSize: 48,
                             ),
                           ),
                           Text(
-                            'PRODUCT DESIGNER',
+                            'PRODUCT DEVELOPER',
                             style: TextStyle(
-                              fontSize: 24,
                               color: Theme.of(context).textTheme.caption?.color,
-                            ),
-                          ),
-                          Text(
-                            'SOFTWARE DEVELOPER',
-                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
                               fontSize: 24,
-                              color: Theme.of(context).textTheme.caption?.color,
                             ),
                           ),
                         ].separate(),
                       ),
-                      IconTheme.merge(
-                        data: const IconThemeData(size: 40),
-                        child: Row(
-                          children: [
-                            IconButton(
-                              tooltip: 'Email',
-                              icon: const Icon(Icons.email_rounded),
-                              onPressed: () => launchUrlString(Urls.email),
-                            ),
-                            IconButton(
-                              tooltip: 'LinkedIn',
-                              icon: const Icon(FontAwesomeIcons.linkedin),
-                              onPressed: () => launchUrlString(Urls.linkedIn),
-                            ),
-                            IconButton(
-                              tooltip: 'GitHub',
-                              icon: const Icon(FontAwesomeIcons.github),
-                              onPressed: () => launchUrlString(Urls.gitHub),
-                            ),
-                          ].separate(space: 24),
-                        ),
-                      ),
+                      const ContactActions(iconSize: 40),
                     ],
                   ),
                   const SizedBox(height: 32),
@@ -180,8 +163,8 @@ class ResumePage extends StatelessWidget {
                               const Text(
                                 'ABOUT ME',
                                 style: TextStyle(
-                                  fontSize: 24,
                                   fontWeight: FontWeight.w600,
+                                  fontSize: 24,
                                 ),
                               ),
                               Text(
@@ -199,8 +182,8 @@ class ResumePage extends StatelessWidget {
                             const Text(
                               'PROJECTS',
                               style: TextStyle(
-                                fontSize: 24,
                                 fontWeight: FontWeight.w600,
+                                fontSize: 24,
                               ),
                             ),
                           ],
@@ -215,8 +198,8 @@ class ResumePage extends StatelessWidget {
                               const Text(
                                 'EXPERIENCE',
                                 style: TextStyle(
-                                  fontSize: 24,
                                   fontWeight: FontWeight.w600,
+                                  fontSize: 24,
                                 ),
                               ),
                               for (final experience in PersonalInfo.experience)

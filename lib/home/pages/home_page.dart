@@ -17,12 +17,13 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16),
             child: Row(
               children: [
-                TextButton(
+                TextButton.icon(
                   style: TextButton.styleFrom(
                     foregroundColor: Theme.of(context).textTheme.button?.color,
                   ),
                   onPressed: () => launchUrlString('${Uri.base}resume'),
-                  child: const Text('Resume'),
+                  icon: const Icon(Icons.launch_rounded),
+                  label: const Text('Resume'),
                 ),
               ],
             ),
