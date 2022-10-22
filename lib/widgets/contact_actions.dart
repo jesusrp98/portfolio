@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/utils/list_gutter.dart';
+import 'package:layout/layout.dart';
 import 'package:portfolio/utils/urls.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -36,13 +36,13 @@ class ContactActions extends StatelessWidget {
       return IconTheme.merge(
         data: IconThemeData(size: iconSize),
         child: Row(
-          children: actions.separate(space: iconSize! / 2),
+          children: actions.separate(iconSize! / 2),
         ),
       );
     }
 
     return Row(
-      children: actions.separate(),
+      children: actions.separate(12),
     );
   }
 }

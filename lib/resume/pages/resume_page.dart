@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:portfolio/resume/utils/personal_info.dart';
 import 'package:portfolio/resume/widgets/details_tile.dart';
 import 'package:portfolio/resume/widgets/experience_tile.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/utils/list_gutter.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 
 class ResumePage extends StatelessWidget {
@@ -85,7 +85,7 @@ class ResumePage extends StatelessWidget {
                           assetPath: 'assets/images/app_store.svg',
                           title: 'App Store Connect',
                         ),
-                      ].separate(),
+                      ].separate(12),
                       const SizedBox(height: 24),
                       ...[
                         const Text(
@@ -112,7 +112,7 @@ class ResumePage extends StatelessWidget {
                           assetPath: 'assets/images/german.svg',
                           title: 'German',
                         ),
-                      ].separate(),
+                      ].separate(12),
                     ],
                   ),
                 ),
@@ -131,9 +131,9 @@ class ResumePage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            'JESUS RODRIGUEZ',
-                            style: TextStyle(
+                          Text(
+                            PersonalInfo.name.toUpperCase(),
+                            style: const TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 48,
                             ),
@@ -146,7 +146,7 @@ class ResumePage extends StatelessWidget {
                               fontSize: 24,
                             ),
                           ),
-                        ].separate(),
+                        ].separate(12),
                       ),
                       const ContactActions(iconSize: 40),
                     ],
@@ -177,7 +177,7 @@ class ResumePage extends StatelessWidget {
                                       ?.color,
                                 ),
                               ),
-                            ].separate(),
+                            ].separate(12),
                             const SizedBox(height: 32),
                             const Text(
                               'PROJECTS',
@@ -204,7 +204,7 @@ class ResumePage extends StatelessWidget {
                               ),
                               for (final experience in PersonalInfo.experience)
                                 ExperienceTile(experience: experience),
-                            ].separate()
+                            ].separate(12)
                           ],
                         ),
                       ),

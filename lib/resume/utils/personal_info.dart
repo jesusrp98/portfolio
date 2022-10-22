@@ -3,8 +3,14 @@ import 'package:portfolio/resume/models/experience.dart';
 class PersonalInfo {
   const PersonalInfo._();
 
+  static const name = 'Jesus Rodriguez';
+
   static const description =
-      'I\'m focused on frontend and mobile development. My greatest passions are UX/UI design and the open-source community. Love communicate and collaborate with other people around the globe.';
+      """I'm a product developer, focused on crafting intuitive and beautiful digital experiences.
+
+With a background in Computer Engineering, I've always have had a passion for product design.
+
+Based in Spain 🇪🇸""";
 
   static const experience = [
     Experience(
