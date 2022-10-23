@@ -36,7 +36,7 @@ jobs:
           channel: stable
 
       - name: Build web
-        run: flutter build web --release --base-href /portfolio/
+        run: flutter build web --release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
