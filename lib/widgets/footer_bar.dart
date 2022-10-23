@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:portfolio/utils/urls.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -8,6 +9,8 @@ class FooterBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
+
     return Column(
       children: [
         const Divider(),
@@ -24,7 +27,7 @@ class FooterBar extends StatelessWidget {
                 icon: const Icon(Icons.launch_rounded),
                 label: const Text('This page is open source!'),
               ),
-              const ContactActions(),
+              if (!isPhoneLayout) const ContactActions(),
             ],
           ),
         ),
