@@ -4,15 +4,15 @@ import 'package:portfolio/router/app_router.dart';
 import 'package:portfolio/utils/app_styles.dart';
 
 class App extends StatelessWidget {
+  static final router = AppRouter.initialize();
+
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final router = AppRouter.initialize();
-
     return Layout(
       child: MaterialApp.router(
-        title: 'portfolio',
+        title: 'Jesus Rodriguez',
         debugShowCheckedModeBanner: false,
         theme: AppStyles.light,
         darkTheme: AppStyles.dark,
