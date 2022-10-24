@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:portfolio/resume/models/experience.dart';
 
 class PersonalInfo {
@@ -5,8 +7,8 @@ class PersonalInfo {
 
   static const name = 'Jesus Rodriguez';
 
-  static const description =
-      """I'm a product developer, focused on crafting intuitive and beautiful digital experiences.
+  static const description = """
+I'm a product developer, focused on crafting intuitive and beautiful digital experiences.
 
 With a background in Computer Engineering, I've always have had a passion for product design.
 

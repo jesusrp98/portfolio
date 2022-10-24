@@ -11,7 +11,10 @@ import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/portfolio_app_bar.dart';
 import 'package:portfolio/widgets/portfolio_scaffold.dart';
 
-typedef NavigationItemCallback = Function(BuildContext context, StartTabs tab);
+typedef NavigationItemCallback = void Function(
+  BuildContext context,
+  StartTabs tab,
+);
 
 class StartScaffold extends StatelessWidget {
   static const pageKey = ValueKey('StartScaffold');

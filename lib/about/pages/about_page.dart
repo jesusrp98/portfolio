@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/home/widgets/home_header.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -8,6 +9,8 @@ class AboutPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const HomeHeader(),
+        const Divider(),
         const Padding(
           padding: EdgeInsets.all(16),
           child: Text(

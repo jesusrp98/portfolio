@@ -17,7 +17,6 @@ class PortfolioAppBar extends StatelessWidget {
       stretch: true,
       title: title,
       actions: actions,
-      expandedHeight: null,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       titleTextStyle: Theme.of(context).textTheme.headline6,
     );

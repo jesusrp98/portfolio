@@ -10,9 +10,9 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final showHeaderImage = context.breakpoint >= LayoutBreakpoint.md;
 
-    final verticalPadding = context.layout.value(xs: 16.0, md: 64.0);
-    final titleFontSize = context.layout.value(xs: 32.0, md: 64.0);
-    final descriptionFontSize = context.layout.value(xs: 16.0, md: 18.0);
+    final verticalPadding = context.layout.value<double>(xs: 16, md: 64);
+    final titleFontSize = context.layout.value<double>(xs: 32, md: 64);
+    final descriptionFontSize = context.layout.value<double>(xs: 16, md: 18);
 
     return Padding(
       padding: EdgeInsets.symmetric(
