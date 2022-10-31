@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/utils/urls.dart';
-import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class FooterBar extends StatelessWidget {
@@ -27,7 +26,14 @@ class FooterBar extends StatelessWidget {
                 icon: const Icon(Icons.launch_rounded),
                 label: const Text('This page is open source!'),
               ),
-              if (!isPhoneLayout) const ContactActions(),
+              if (!isPhoneLayout)
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Theme.of(context).textTheme.button?.color,
+                  ),
+                  onPressed: () => launchUrlString(Urls.flutterPage),
+                  child: const Text('Made with 💙 Flutter'),
+                ),
             ],
           ),
         ),
