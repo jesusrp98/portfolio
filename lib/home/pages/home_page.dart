@@ -11,31 +11,14 @@ import 'package:portfolio/widgets/portfolio_app_bar.dart';
 import 'package:portfolio/widgets/portfolio_scaffold.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  static final _workSectionKey = GlobalKey();
+  static final _aboutSectionKey = GlobalKey();
 
-  void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
-    return context.push(ResumeRoute.resumePath);
-    // switch (tab) {
-    // case HomeTabs.work:
-    //   Scrollable.ensureVisible(
-    //     wk.currentContext!,
-    //     curve: Curves.easeInOutCubic,
-    //     duration: Duration(milliseconds: 300),
-    //     alignmentPolicy: ScrollPositionAlignmentPolicy.keepVisibleAtStart,
-    //     alignment: 40,
-    //   );
-    //   break;
-    // case HomeTabs.about:
-    //   Scrollable.ensureVisible(
-    //     ak.currentContext!,
-    //     curve: Curves.easeInOutCubic,
-    //     duration: Duration(milliseconds: 300),
-    //   );
-    //   break;
-    //   case HomeTabs.resume:
-    //     return context.push(ResumeRoute.resumePath);
-    // }
-  }
+  static const _kScrollAnimationDuration = Duration(milliseconds: 300);
+  static const _kScrollAnimationCurve = Curves.easeInOutCubic;
+  static const _kScrollAnimationAlignment = 0.02;
+
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +61,12 @@ class HomePage extends StatelessWidget {
               children: [
                 const HomeHeader(),
                 const Divider(),
-                const Padding(
-                  padding: EdgeInsets.all(16),
+                Padding(
+                  padding: const EdgeInsets.all(16),
                   child: Text(
-                    'MY WORK',
-                    style: TextStyle(
+                    HomeTabs.work.toNavigationString().toUpperCase(),
+                    key: _workSectionKey,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 24,
                     ),
@@ -93,11 +77,12 @@ class HomePage extends StatelessWidget {
                     Text(i.toString())
                 ],
                 const Divider(),
-                const Padding(
-                  padding: EdgeInsets.all(16),
+                Padding(
+                  padding: const EdgeInsets.all(16),
                   child: Text(
-                    'ABOUT',
-                    style: TextStyle(
+                    HomeTabs.about.toNavigationString().toUpperCase(),
+                    key: _aboutSectionKey,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 24,
                     ),
@@ -114,6 +99,29 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
+    switch (tab) {
+      case HomeTabs.work:
+        Scrollable.ensureVisible(
+          _workSectionKey.currentContext!,
+          curve: _kScrollAnimationCurve,
+          duration: _kScrollAnimationDuration,
+          alignment: _kScrollAnimationAlignment,
+        );
+        break;
+      case HomeTabs.about:
+        Scrollable.ensureVisible(
+          _aboutSectionKey.currentContext!,
+          curve: _kScrollAnimationCurve,
+          duration: _kScrollAnimationDuration,
+          alignment: _kScrollAnimationAlignment,
+        );
+        break;
+      case HomeTabs.resume:
+        return context.push(ResumeRoute.resumePath);
+    }
   }
 }
 
