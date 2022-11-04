@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/app_colors.dart';
 
 class PortfolioScaffold extends StatelessWidget {
   final Widget appBar;
@@ -16,21 +17,29 @@ class PortfolioScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: drawer,
-      body: CustomScrollView(
-        slivers: [
-          appBar,
-          if (body != null)
-            SliverPadding(
-              padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).padding.bottom,
-              ),
-              sliver: body,
-            ),
-        ],
+    return Theme(
+      data: Theme.of(context).copyWith(
+        scaffoldBackgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkScaffoldColor
+            : null,
       ),
-      bottomNavigationBar: bottomBar,
+      child: Scaffold(
+        drawer: drawer,
+        body: CustomScrollView(
+          slivers: [
+            appBar,
+            if (body != null)
+              SliverPadding(
+                padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(
+                  top: 16,
+                  bottom: MediaQuery.of(context).padding.bottom,
+                ),
+                sliver: body,
+              ),
+          ],
+        ),
+        bottomNavigationBar: bottomBar,
+      ),
     );
   }
 }

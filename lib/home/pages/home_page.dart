@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
+import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/home_header.dart';
 import 'package:portfolio/resume/routes/resume_route.dart';
@@ -9,6 +10,7 @@ import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/portfolio_app_bar.dart';
 import 'package:portfolio/widgets/portfolio_scaffold.dart';
+import 'package:portfolio/widgets/responsive_sliver_layout.dart';
 
 class HomePage extends StatelessWidget {
   static final _workSectionKey = GlobalKey();
@@ -53,17 +55,15 @@ class HomePage extends StatelessWidget {
               onNavigationItemTap: _onNavigationItemTap,
             )
           : null,
-      body: SliverList(
-        delegate: SliverChildListDelegate(
-          [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const HomeHeader(),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
+      body: ResponsiveSliverLayout(
+        child: SliverList(
+          delegate: SliverChildListDelegate(
+            [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const HomeHeader(),
+                  Text(
                     HomeTabs.work.toNavigationString().toUpperCase(),
                     key: _workSectionKey,
                     style: const TextStyle(
@@ -71,15 +71,16 @@ class HomePage extends StatelessWidget {
                       fontSize: 24,
                     ),
                   ),
-                ),
-                ...[
-                  for (final i in List.generate(64, (index) => index))
-                    Text(i.toString())
-                ],
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
+                  Text(
                     HomeTabs.about.toNavigationString().toUpperCase(),
                     key: _aboutSectionKey,
                     style: const TextStyle(
@@ -87,15 +88,17 @@ class HomePage extends StatelessWidget {
                       fontSize: 24,
                     ),
                   ),
-                ),
-                ...[
-                  for (final i in List.generate(64, (index) => index))
-                    Text(i.toString())
-                ],
-              ],
-            ),
-            const FooterBar(),
-          ],
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  )
+                ].separate(24),
+              ),
+              const FooterBar(),
+            ],
+          ),
         ),
       ),
     );

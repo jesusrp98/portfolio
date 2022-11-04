@@ -14,8 +14,8 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Jesus Rodriguez',
         debugShowCheckedModeBanner: false,
-        theme: AppStyles.light,
-        darkTheme: AppStyles.dark,
+        theme: AppStyles.light(),
+        darkTheme: AppStyles.dark(),
         routerDelegate: router.routerDelegate,
         routeInformationParser: router.routeInformationParser,
         routeInformationProvider: router.routeInformationProvider,
