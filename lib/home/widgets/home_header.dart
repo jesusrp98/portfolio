@@ -9,59 +9,47 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showHeaderImage = context.breakpoint >= LayoutBreakpoint.md;
+    final showHeaderImage = context.breakpoint >= LayoutBreakpoint.sm;
 
-    final verticalPadding = context.layout.value<double>(xs: 16, md: 64);
-    final titleFontSize = context.layout.value<double>(xs: 32, md: 64);
-    final descriptionFontSize = context.layout.value<double>(xs: 16, md: 18);
+    final padding = context.layout.value<double>(xs: 16, md: 40);
+    final titleFontSize = context.layout.value<double>(xs: 32, md: 48);
+    final titleFontHeight = context.layout.value<double>(xs: 48, md: 64);
+    final descriptionFontSize = context.layout.value<double>(xs: 16, md: 24);
+    final headerImageHeight = context.layout.value<double>(xs: 96, md: 128);
 
     return HomeCard(
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: verticalPadding,
-          horizontal: 16,
-        ),
-        child: Row(
-          mainAxisAlignment: showHeaderImage
-              ? MainAxisAlignment.center
-              : MainAxisAlignment.start,
+        padding: EdgeInsets.all(padding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (showHeaderImage)
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage('assets/images/profile.jpg'),
-                  ),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.white12,
-                    width: 6,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  """
+Greetings! 👋
+I'm ${PersonalInfo.name}""",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: titleFontSize,
+                    height: titleFontHeight / titleFontSize,
                   ),
                 ),
-                child: const SizedBox.square(dimension: 224),
-              ),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    PersonalInfo.name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: titleFontSize,
-                    ),
-                  ),
-                  AutoSizeText(
-                    PersonalInfo.description,
-                    style: TextStyle(
-                      color: Theme.of(context).textTheme.caption?.color,
-                      fontSize: descriptionFontSize,
-                    ),
-                  ),
-                ].separate(24),
+                if (showHeaderImage)
+                  Image.asset(
+                    'assets/images/bongo-cat.gif',
+                    height: headerImageHeight,
+                  )
+              ],
+            ),
+            AutoSizeText.rich(
+              PersonalInfo.description,
+              style: TextStyle(
+                fontSize: descriptionFontSize,
               ),
             ),
-          ].separate(48),
+          ].separate(24),
         ),
       ),
     );

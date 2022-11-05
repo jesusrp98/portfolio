@@ -167,7 +167,7 @@ class ResumePage extends StatelessWidget {
                                   fontSize: 24,
                                 ),
                               ),
-                              Text(
+                              Text.rich(
                                 PersonalInfo.description,
                                 style: TextStyle(
                                   fontSize: 16,
