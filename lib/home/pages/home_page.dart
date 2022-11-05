@@ -5,6 +5,7 @@ import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/home_header.dart';
+import 'package:portfolio/home/widgets/section_header.dart';
 import 'package:portfolio/resume/routes/resume_route.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
 
   static const _kScrollAnimationDuration = Duration(milliseconds: 300);
   static const _kScrollAnimationCurve = Curves.easeInOutCubic;
-  static const _kScrollAnimationAlignment = 0.02;
+  static const _kScrollAnimationAlignment = 0.015;
 
   const HomePage({super.key});
 
@@ -63,12 +64,11 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const HomeHeader(),
-                  Text(
-                    HomeTabs.work.toNavigationString().toUpperCase(),
+                  SectionHeader(
                     key: _workSectionKey,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
+                    leading: const Icon(Icons.verified_rounded),
+                    title: Text(
+                      HomeTabs.work.toNavigationString().toUpperCase(),
                     ),
                   ),
                   const HomeCard(
@@ -80,13 +80,15 @@ class HomePage extends StatelessWidget {
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
                   ),
-                  Text(
-                    HomeTabs.about.toNavigationString().toUpperCase(),
+                  SectionHeader(
                     key: _aboutSectionKey,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
+                    leading: const Icon(Icons.favorite_rounded),
+                    title: Text(
+                      HomeTabs.about.toNavigationString().toUpperCase(),
                     ),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
                   ),
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
