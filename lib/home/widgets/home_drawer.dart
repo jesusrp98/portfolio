@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/home/pages/home_page.dart';
-import 'package:portfolio/resume/utils/personal_info.dart';
+import 'package:portfolio/utils/personal_info.dart';
 
 typedef NavigationItemCallback = void Function(
   BuildContext context,

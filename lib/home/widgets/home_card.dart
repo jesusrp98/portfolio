@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HomeCard extends StatelessWidget {
+  final EdgeInsetsGeometry? padding;
   final Widget child;
 
-  const HomeCard({super.key, required this.child});
+  const HomeCard({
+    super.key,
+    this.padding,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,10 @@ class HomeCard extends StatelessWidget {
           ),
         ],
       ),
-      child: child,
+      child: Padding(
+        padding: padding ?? const EdgeInsets.all(32),
+        child: child,
+      ),
     );
   }
 }

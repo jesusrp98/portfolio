@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
+import 'package:portfolio/home/widgets/header_card.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
-import 'package:portfolio/home/widgets/home_header.dart';
+import 'package:portfolio/home/widgets/journey_card.dart';
+import 'package:portfolio/home/widgets/resume_card.dart';
 import 'package:portfolio/home/widgets/section_header.dart';
-import 'package:portfolio/resume/routes/resume_route.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/portfolio_app_bar.dart';
@@ -16,6 +16,7 @@ import 'package:portfolio/widgets/responsive_sliver_layout.dart';
 class HomePage extends StatelessWidget {
   static final _workSectionKey = GlobalKey();
   static final _aboutSectionKey = GlobalKey();
+  static final _resumeSectionKey = GlobalKey();
 
   static const _kScrollAnimationDuration = Duration(milliseconds: 300);
   static const _kScrollAnimationCurve = Curves.easeInOutCubic;
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const HomeHeader(),
+                  const HeaderCard(),
                   SectionHeader(
                     key: _workSectionKey,
                     leading: const Icon(Icons.verified_rounded),
@@ -92,20 +93,17 @@ class HomePage extends StatelessWidget {
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
                   ),
-                  const SectionHeader(
-                    leading: Icon(Icons.school_rounded),
-                    title: Text('RESUME'),
+                  SectionHeader(
+                    key: _resumeSectionKey,
+                    leading: const Icon(Icons.school_rounded),
+                    title: const Text('RESUME'),
                   ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
+                  const ResumeCard(),
                   const SectionHeader(
                     leading: Icon(Icons.history_edu_rounded),
                     title: Text('JOURNEY'),
                   ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
+                  const JourneyCard(),
                 ].separate(24),
               ),
               const FooterBar(),
@@ -135,7 +133,12 @@ class HomePage extends StatelessWidget {
         );
         break;
       case HomeTabs.resume:
-        return context.push(ResumeRoute.resumePath);
+        Scrollable.ensureVisible(
+          _resumeSectionKey.currentContext!,
+          curve: _kScrollAnimationCurve,
+          duration: _kScrollAnimationDuration,
+          alignment: _kScrollAnimationAlignment,
+        );
     }
   }
 }

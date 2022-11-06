@@ -1,7 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/resume/models/experience.dart';
+import 'package:portfolio/home/models/experience.dart';
 
 class PersonalInfo {
   const PersonalInfo._();
