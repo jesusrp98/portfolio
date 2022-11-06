@@ -17,7 +17,7 @@ class JourneyCard extends StatelessWidget {
           experience: PersonalInfo.experience[index],
         ),
         separatorBuilder: (context, index) => const Padding(
-          padding: EdgeInsets.only(top: 12),
+          padding: EdgeInsets.only(top: 16, bottom: 8),
           child: Divider(height: 0),
         ),
       ),

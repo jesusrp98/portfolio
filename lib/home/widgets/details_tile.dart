@@ -42,7 +42,6 @@ class DetailsTile extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-            color: Colors.white,
             fontSize: 16,
           ),
         ),

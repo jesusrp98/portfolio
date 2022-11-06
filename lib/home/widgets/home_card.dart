@@ -24,7 +24,7 @@ class HomeCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: padding ?? const EdgeInsets.all(32),
+        padding: padding ?? const EdgeInsets.all(24),
         child: child,
       ),
     );

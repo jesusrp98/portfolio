@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/home/models/experience.dart';
+import 'package:portfolio/home/widgets/details_tag.dart';
 
 class ExperienceTile extends StatelessWidget {
   final Experience experience;
@@ -17,12 +18,17 @@ class ExperienceTile extends StatelessWidget {
         ListTile(
           contentPadding: EdgeInsets.zero,
           leading: CircleAvatar(
-            backgroundImage: AssetImage(experience.imagePath),
+            foregroundImage: AssetImage(experience.imagePath),
+            radius: 24,
           ),
-          title: Text(
-            experience.company.toUpperCase(),
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
+          title: Padding(
+            padding: const EdgeInsets.only(bottom: 4),
+            child: Text(
+              experience.company.toUpperCase(),
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+              ),
             ),
           ),
           subtitle: Text(
@@ -33,28 +39,8 @@ class ExperienceTile extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          trailing: DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(99),
-              border: Border.all(
-                color: Theme.of(context)
-                    .textTheme
-                    .caption!
-                    .color!
-                    .withOpacity(0.16),
-                width: 2,
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              child: Text(
-                experience.period,
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.caption?.color,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+          trailing: DetailsTag(
+            child: Text(experience.period),
           ),
         ),
         for (final task in experience.tasks)
@@ -63,6 +49,7 @@ class ExperienceTile extends StatelessWidget {
             style: TextStyle(
               color: Theme.of(context).textTheme.caption?.color,
               fontSize: 16,
+              height: 32 / 16,
             ),
           )
       ],

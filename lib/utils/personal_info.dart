@@ -83,8 +83,8 @@ class PersonalInfo {
     Experience(
       imagePath: 'assets/images/wealize.png',
       company: 'Wealize',
-      position: 'Software Developer',
-      period: '2020',
+      position: 'Full-Stack Developer',
+      period: '2019 - 2020',
       tasks: [
         'Developed React-based frontend for chatbot management system.',
         'Worked on IBM Watson-based NLP systems.',
