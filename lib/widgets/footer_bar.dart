@@ -10,27 +10,42 @@ class FooterBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
 
+    final openSourceButton = TextButton.icon(
+      style: TextButton.styleFrom(
+        foregroundColor: Theme.of(context).textTheme.button?.color,
+      ),
+      onPressed: () => launchUrlString(Urls.portfolioGitHubPage),
+      icon: const Icon(Icons.launch_rounded),
+      label: const Text('This page is open source!'),
+    );
+
+    final flutterButton = TextButton(
+      style: TextButton.styleFrom(
+        foregroundColor: Theme.of(context).textTheme.button?.color,
+      ),
+      onPressed: () => launchUrlString(Urls.flutterPage),
+      child: const Text('Made with 💙 Flutter'),
+    );
+
+    if (isPhoneLayout) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: Column(
+          children: [
+            openSourceButton,
+            flutterButton,
+          ].separate(12),
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          TextButton.icon(
-            style: TextButton.styleFrom(
-              foregroundColor: Theme.of(context).textTheme.button?.color,
-            ),
-            onPressed: () => launchUrlString(Urls.portfolioGitHubPage),
-            icon: const Icon(Icons.launch_rounded),
-            label: const Text('This page is open source!'),
-          ),
-          if (!isPhoneLayout)
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Theme.of(context).textTheme.button?.color,
-              ),
-              onPressed: () => launchUrlString(Urls.flutterPage),
-              child: const Text('Made with 💙 Flutter'),
-            ),
+          openSourceButton,
+          flutterButton,
         ],
       ),
     );
