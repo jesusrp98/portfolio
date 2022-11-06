@@ -67,9 +67,7 @@ class HomePage extends StatelessWidget {
                   SectionHeader(
                     key: _workSectionKey,
                     leading: const Icon(Icons.verified_rounded),
-                    title: Text(
-                      HomeTabs.work.toNavigationString().toUpperCase(),
-                    ),
+                    title: const Text('WORK'),
                   ),
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
@@ -83,9 +81,7 @@ class HomePage extends StatelessWidget {
                   SectionHeader(
                     key: _aboutSectionKey,
                     leading: const Icon(Icons.favorite_rounded),
-                    title: Text(
-                      HomeTabs.about.toNavigationString().toUpperCase(),
-                    ),
+                    title: const Text('ABOUT'),
                   ),
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
@@ -95,7 +91,21 @@ class HomePage extends StatelessWidget {
                   ),
                   const HomeCard(
                     child: SizedBox(height: 300, width: 1200),
-                  )
+                  ),
+                  const SectionHeader(
+                    leading: Icon(Icons.school_rounded),
+                    title: Text('RESUME'),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
+                  const SectionHeader(
+                    leading: Icon(Icons.history_edu_rounded),
+                    title: Text('JOURNEY'),
+                  ),
+                  const HomeCard(
+                    child: SizedBox(height: 300, width: 1200),
+                  ),
                 ].separate(24),
               ),
               const FooterBar(),
