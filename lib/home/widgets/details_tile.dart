@@ -17,7 +17,7 @@ class DetailsTile extends StatelessWidget {
   }) {
     return DetailsTile(
       leading: Padding(
-        padding: const EdgeInsets.all(4),
+        padding: const EdgeInsets.all(5),
         child: SvgPicture.asset(assetPath),
       ),
       title: title,
@@ -30,9 +30,12 @@ class DetailsTile extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         IconTheme.merge(
-          data: const IconThemeData(color: Colors.black87),
+          data: const IconThemeData(
+            size: 32,
+            color: Colors.black87,
+          ),
           child: SizedBox.square(
-            dimension: 32,
+            dimension: 40,
             child: DecoratedBox(
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -46,7 +49,7 @@ class DetailsTile extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-            fontSize: 16,
+            fontSize: 18,
           ),
         ),
       ],

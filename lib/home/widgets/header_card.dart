@@ -42,32 +42,37 @@ I'm ${PersonalInfo.name}""",
             ],
           ),
           AutoSizeText.rich(
-            PersonalInfo.description,
+            PersonalInfo.description(context),
             style: TextStyle(
               fontSize: descriptionFontSize,
             ),
           ),
           const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const DetailsTile(
-                leading: Icon(Icons.person_rounded),
-                title: 'He/Him',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/spanish.svg',
-                title: 'Spanish',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/english.svg',
-                title: 'English',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/german.svg',
-                title: 'German',
-              ),
-            ],
+          Align(
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.center,
+              spacing: 64,
+              runSpacing: 24,
+              children: [
+                const DetailsTile(
+                  leading: Icon(Icons.person_rounded),
+                  title: 'He/Him',
+                ),
+                DetailsTile.svg(
+                  assetPath: 'assets/images/spanish.svg',
+                  title: 'Spanish',
+                ),
+                DetailsTile.svg(
+                  assetPath: 'assets/images/english.svg',
+                  title: 'English',
+                ),
+                DetailsTile.svg(
+                  assetPath: 'assets/images/german.svg',
+                  title: 'German',
+                ),
+              ],
+            ),
           ),
         ].separate(24),
       ),

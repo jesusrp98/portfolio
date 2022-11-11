@@ -1,6 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:portfolio/home/models/experience.dart';
 
 class PersonalInfo {
@@ -8,28 +8,46 @@ class PersonalInfo {
 
   static const name = 'Jesus Rodriguez';
 
-  static const description = TextSpan(
-    children: [
-      TextSpan(text: "I'm a "),
-      TextSpan(
-        text: 'product developer',
-        style: TextStyle(fontWeight: FontWeight.w600),
-      ),
-      TextSpan(
-        text:
-            ', focused on crafting intuitive and beautiful digital experiences.',
-      ),
-      TextSpan(text: '\n\n'),
-      TextSpan(text: 'With a background in '),
-      TextSpan(
-        text: 'Computer Engineering',
-        style: TextStyle(fontWeight: FontWeight.w600),
-      ),
-      TextSpan(text: ", I've always have had a passion for product design."),
-      TextSpan(text: '\n\n'),
-      TextSpan(text: 'Based in Spain 🇪🇸'),
-    ],
-  );
+  static TextSpan description(BuildContext context) => TextSpan(
+        children: [
+          TextSpan(
+            text: "I'm a ",
+            style: TextStyle(
+              color: Theme.of(context).textTheme.caption?.color,
+            ),
+          ),
+          const TextSpan(
+            text: 'product developer',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          TextSpan(
+            text:
+                ', focused on crafting intuitive and beautiful digital experiences.',
+            style: TextStyle(
+              color: Theme.of(context).textTheme.caption?.color,
+            ),
+          ),
+          const TextSpan(text: '\n\n'),
+          TextSpan(
+            text: 'With a background in ',
+            style: TextStyle(
+              color: Theme.of(context).textTheme.caption?.color,
+            ),
+          ),
+          const TextSpan(
+            text: 'Computer Engineering',
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
+          TextSpan(
+            text: ", I've always have had a passion for product design.",
+            style: TextStyle(
+              color: Theme.of(context).textTheme.caption?.color,
+            ),
+          ),
+        ],
+      );
 
   static const resume = [
     Experience(
