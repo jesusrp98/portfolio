@@ -95,14 +95,10 @@ class HomePage extends StatelessWidget {
                   ),
                   SectionHeader(
                     key: _resumeSectionKey,
-                    leading: const Icon(Icons.school_rounded),
+                    leading: const Icon(Icons.history_edu_rounded),
                     title: const Text('RESUME'),
                   ),
                   const ResumeCard(),
-                  const SectionHeader(
-                    leading: Icon(Icons.history_edu_rounded),
-                    title: Text('JOURNEY'),
-                  ),
                   const JourneyCard(),
                 ].separate(24),
               ),
