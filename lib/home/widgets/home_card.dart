@@ -13,7 +13,7 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final padding = context.layout.value(
       xs: const EdgeInsets.all(16),
-      md: const EdgeInsets.all(32),
+      md: const EdgeInsets.all(24),
     );
 
     return DecoratedBox(

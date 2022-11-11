@@ -12,8 +12,16 @@ class JourneyCard extends StatelessWidget {
     return HomeCard(
       child: Column(
         children: [
-          for (final experience in PersonalInfo.experience)
-            ExperienceTile(experience: experience),
+          for (final experience in PersonalInfo.journey)
+            ExperienceTile(
+              experience: experience,
+              leadingBuilder: (context, imagePath) => ClipOval(
+                child: Image.asset(
+                  experience.imagePath,
+                  width: 48,
+                ),
+              ),
+            ),
         ].separateWith(
           separator: const Padding(
             padding: EdgeInsets.symmetric(vertical: 16),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:layout/layout.dart';
-import 'package:portfolio/home/widgets/details_tile.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:portfolio/home/widgets/experience_tile.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
+import 'package:portfolio/utils/extensions/separate_with_extension.dart';
+import 'package:portfolio/utils/personal_info.dart';
 
 class ResumeCard extends StatelessWidget {
   const ResumeCard({super.key});
@@ -11,60 +13,29 @@ class ResumeCard extends StatelessWidget {
     return HomeCard(
       child: Column(
         children: [
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            children: [
-              DetailsTile.svg(
-                assetPath: 'assets/images/figma.svg',
-                title: 'Figma',
+          for (final experience in PersonalInfo.resume)
+            ExperienceTile(
+              experience: experience,
+              leadingBuilder: (context, imagePath) => SizedBox.square(
+                dimension: 48,
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: SvgPicture.asset(imagePath),
+                  ),
+                ),
               ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/flutter.svg',
-                title: 'Flutter',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/firebase.svg',
-                title: 'Firebase',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/linux.svg',
-                title: 'Linux',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/amplitude.svg',
-                title: 'Amplitude',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/app_store.svg',
-                title: 'App Store Connect',
-              ),
-            ],
+            ),
+        ].separateWith(
+          separator: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Divider(),
           ),
-          const Divider(),
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            children: [
-              DetailsTile.svg(
-                assetPath: 'assets/images/uco.svg',
-                title: 'Computer Engineer',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/spanish.svg',
-                title: 'Spanish',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/english.svg',
-                title: 'English',
-              ),
-              DetailsTile.svg(
-                assetPath: 'assets/images/german.svg',
-                title: 'German',
-              ),
-            ],
-          ),
-        ].separate(12),
+        ),
       ),
     );
   }

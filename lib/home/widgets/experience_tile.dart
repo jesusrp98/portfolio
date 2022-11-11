@@ -4,12 +4,19 @@ import 'package:layout/layout.dart';
 import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/details_tag.dart';
 
+typedef LeadingWidgetBuilder = Widget Function(
+  BuildContext context,
+  String imagePath,
+);
+
 class ExperienceTile extends StatelessWidget {
   final Experience experience;
+  final LeadingWidgetBuilder leadingBuilder;
 
   const ExperienceTile({
     super.key,
     required this.experience,
+    required this.leadingBuilder,
   });
 
   @override
@@ -22,10 +29,7 @@ class ExperienceTile extends StatelessWidget {
             Expanded(
               child: Row(
                 children: [
-                  CircleAvatar(
-                    foregroundImage: AssetImage(experience.imagePath),
-                    radius: 24,
-                  ),
+                  leadingBuilder(context, experience.imagePath),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +37,7 @@ class ExperienceTile extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 4),
                           child: AutoSizeText(
-                            experience.company.toUpperCase(),
+                            experience.title,
                             maxLines: 2,
                             style: const TextStyle(
                               fontWeight: FontWeight.w600,
@@ -41,27 +45,29 @@ class ExperienceTile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          experience.position,
-                          style: TextStyle(
-                            color: Theme.of(context).textTheme.caption?.color,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                        if (experience.subtitle != null)
+                          Text(
+                            experience.subtitle!,
+                            style: TextStyle(
+                              color: Theme.of(context).textTheme.caption?.color,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   )
                 ].separate(16),
               ),
             ),
-            if (context.breakpoint != LayoutBreakpoint.xs)
+            if (experience.trailing != null &&
+                context.breakpoint != LayoutBreakpoint.xs)
               DetailsTag(
-                child: Text(experience.period),
+                child: Text(experience.trailing!),
               ),
           ],
         ),
-        for (final task in experience.tasks)
+        for (final task in experience.details)
           Text(
             '· $task',
             style: TextStyle(

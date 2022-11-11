@@ -31,13 +31,41 @@ class PersonalInfo {
     ],
   );
 
-  static const experience = [
+  static const resume = [
+    Experience(
+      imagePath: 'assets/images/flutter.svg',
+      title: 'Flutter',
+      details: [],
+    ),
+    Experience(
+      imagePath: 'assets/images/figma.svg',
+      title: 'Figma',
+      details: [],
+    ),
+    Experience(
+      imagePath: 'assets/images/firebase.svg',
+      title: 'Firebase',
+      details: [],
+    ),
+    Experience(
+      imagePath: 'assets/images/amplitude.svg',
+      title: 'Amplitude',
+      details: [],
+    ),
+    Experience(
+      imagePath: 'assets/images/uco.svg',
+      title: 'Computer Engineer',
+      details: [],
+    ),
+  ];
+
+  static const journey = [
     Experience(
       imagePath: 'assets/images/fave.jpg',
-      company: 'Fave',
-      position: 'Flutter Developer',
-      period: '2022',
-      tasks: [
+      title: 'Fave',
+      subtitle: 'Flutter Developer',
+      trailing: '2022',
+      details: [
         'Implemented complex social media features, like real-time chat and news feed.',
         'Worked hand-by-hand with the design people when developing new features.',
         'Improved local and push notifications on both iOS and Android.',
@@ -46,10 +74,10 @@ class PersonalInfo {
     ),
     Experience(
       imagePath: 'assets/images/reflectly.jpg',
-      company: 'Reflectly',
-      position: 'Flutter Developer',
-      period: '2021 - 2022',
-      tasks: [
+      title: 'Reflectly',
+      subtitle: 'Flutter Developer',
+      trailing: '2021 - 2022',
+      details: [
         'Used Firebase to store user data, and making it accessible offline.',
         'Implemented complex designs and fluent animations.',
         'Developed new features using low-level Flutter.',
@@ -58,20 +86,20 @@ class PersonalInfo {
     ),
     Experience(
       imagePath: 'assets/images/eyeem.jpg',
-      company: 'EyeEm',
-      position: 'Flutter Developer',
-      period: '2020 - 2021',
-      tasks: [
+      title: 'EyeEm',
+      subtitle: 'Flutter Developer',
+      trailing: '2020 - 2021',
+      details: [
         'Developed new features in Flutter & deploy them to existing native mobile apps.',
         'Managed app releases through production channels.',
       ],
     ),
     Experience(
       imagePath: 'assets/images/ronald_mcdonald.png',
-      company: 'Ronald McDonald Foundation',
-      position: 'Freelancer',
-      period: '2020 - 2021',
-      tasks: [
+      title: 'Ronald McDonald Foundation',
+      subtitle: 'Freelancer',
+      trailing: '2020 - 2021',
+      details: [
         'Used Firebase service to store user information.',
         'Developed mobile app and CMS web page using Flutter.',
         'Released mobile app to both App Store and Google Play.',
@@ -82,10 +110,10 @@ class PersonalInfo {
     ),
     Experience(
       imagePath: 'assets/images/wealize.png',
-      company: 'Wealize',
-      position: 'Full-Stack Developer',
-      period: '2019 - 2020',
-      tasks: [
+      title: 'Wealize',
+      subtitle: 'Full-Stack Developer',
+      trailing: '2019 - 2020',
+      details: [
         'Developed React-based frontend for chatbot management system.',
         'Worked on IBM Watson-based NLP systems.',
       ],

@@ -29,14 +29,17 @@ class DetailsTile extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox.square(
-          dimension: 32,
-          child: DecoratedBox(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
+        IconTheme.merge(
+          data: const IconThemeData(color: Colors.black87),
+          child: SizedBox.square(
+            dimension: 32,
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: leading,
             ),
-            child: leading,
           ),
         ),
         const SizedBox(width: 12),

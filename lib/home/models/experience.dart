@@ -1,15 +1,15 @@
 class Experience {
   final String imagePath;
-  final String company;
-  final String position;
-  final String period;
-  final List<String> tasks;
+  final String title;
+  final List<String> details;
+  final String? subtitle;
+  final String? trailing;
 
   const Experience({
     required this.imagePath,
-    required this.company,
-    required this.position,
-    required this.period,
-    required this.tasks,
+    required this.title,
+    required this.details,
+    this.subtitle,
+    this.trailing,
   });
 }

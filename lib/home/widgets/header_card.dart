@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
+import 'package:portfolio/home/widgets/details_tile.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/utils/personal_info.dart';
 
@@ -45,6 +46,28 @@ I'm ${PersonalInfo.name}""",
             style: TextStyle(
               fontSize: descriptionFontSize,
             ),
+          ),
+          const Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const DetailsTile(
+                leading: Icon(Icons.person_rounded),
+                title: 'He/Him',
+              ),
+              DetailsTile.svg(
+                assetPath: 'assets/images/spanish.svg',
+                title: 'Spanish',
+              ),
+              DetailsTile.svg(
+                assetPath: 'assets/images/english.svg',
+                title: 'English',
+              ),
+              DetailsTile.svg(
+                assetPath: 'assets/images/german.svg',
+                title: 'German',
+              ),
+            ],
           ),
         ].separate(24),
       ),
