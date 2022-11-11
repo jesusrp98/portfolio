@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 
 class HomeCard extends StatelessWidget {
-  final EdgeInsetsGeometry? padding;
   final Widget child;
 
   const HomeCard({
     super.key,
-    this.padding,
     required this.child,
   });
 
   @override
   Widget build(BuildContext context) {
+    final padding = context.layout.value(
+      xs: const EdgeInsets.all(16),
+      md: const EdgeInsets.all(32),
+    );
+
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
@@ -24,7 +28,7 @@ class HomeCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: padding ?? const EdgeInsets.all(24),
+        padding: padding,
         child: child,
       ),
     );

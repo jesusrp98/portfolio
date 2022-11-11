@@ -10,6 +10,7 @@ class AppStyles {
         appBarTheme: const AppBarTheme(
           centerTitle: false,
         ),
+        dividerTheme: const DividerThemeData(space: 0),
       );
 
   static ThemeData dark() => ThemeData(
@@ -20,5 +21,6 @@ class AppStyles {
         appBarTheme: const AppBarTheme(
           centerTitle: false,
         ),
+        dividerTheme: const DividerThemeData(space: 0),
       );
 }

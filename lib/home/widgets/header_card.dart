@@ -11,14 +11,12 @@ class HeaderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final showHeaderImage = context.breakpoint >= LayoutBreakpoint.sm;
 
-    final padding = context.layout.value<double>(xs: 16, md: 40);
     final titleFontSize = context.layout.value<double>(xs: 32, md: 48);
     final titleFontHeight = context.layout.value<double>(xs: 48, md: 64);
     final descriptionFontSize = context.layout.value<double>(xs: 16, md: 24);
     final headerImageHeight = context.layout.value<double>(xs: 96, md: 128);
 
     return HomeCard(
-      padding: EdgeInsets.all(padding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

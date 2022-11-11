@@ -58,9 +58,9 @@ class HomePage extends StatelessWidget {
             )
           : null,
       body: ResponsiveSliverLayout(
-        child: SliverList(
-          delegate: SliverChildListDelegate(
-            [
+        child: SliverToBoxAdapter(
+          child: Column(
+            children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

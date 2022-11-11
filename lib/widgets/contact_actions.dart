@@ -22,12 +22,12 @@ class ContactActions extends StatelessWidget {
       ),
       IconButton(
         tooltip: 'LinkedIn',
-        icon: const Icon(FontAwesomeIcons.linkedin),
+        icon: const FaIcon(FontAwesomeIcons.linkedin),
         onPressed: () => launchUrlString(Urls.linkedIn),
       ),
       IconButton(
         tooltip: 'GitHub',
-        icon: const Icon(FontAwesomeIcons.github),
+        icon: const FaIcon(FontAwesomeIcons.github),
         onPressed: () => launchUrlString(Urls.gitHub),
       ),
     ];
