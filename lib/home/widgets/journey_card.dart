@@ -16,7 +16,7 @@ class JourneyCard extends StatelessWidget {
             ExperienceTile(experience: experience),
         ].separateWith(
           separator: const Padding(
-            padding: EdgeInsets.only(top: 16, bottom: 8),
+            padding: EdgeInsets.symmetric(vertical: 16),
             child: Divider(),
           ),
         ),
