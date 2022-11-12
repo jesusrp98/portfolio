@@ -53,27 +53,47 @@ class PersonalInfo {
     Experience(
       imagePath: 'assets/images/flutter.svg',
       title: 'Flutter',
-      details: [],
+      details: [
+        'Realized complex designs and fluent animations.',
+        'Deploy Flutter features into existing native mobile apps.',
+        'Worked with local and push notifications on both iOS and Android.',
+        'Implemented complex navigation systems, with deep linking support.',
+      ],
     ),
     Experience(
       imagePath: 'assets/images/figma.svg',
       title: 'Figma',
-      details: [],
+      details: [
+        'Implemented complete design systems.',
+        'Worked inside several professional-level projects.',
+        'Made extensive use of components all around the project.',
+      ],
     ),
     Experience(
       imagePath: 'assets/images/firebase.svg',
       title: 'Firebase',
-      details: [],
+      details: [
+        'Played with offline data persistence.',
+        'Made extensive use of Firestore and all its features.',
+        'Worked with custom Firebase Functions using TypeScript.',
+      ],
     ),
     Experience(
       imagePath: 'assets/images/amplitude.svg',
       title: 'Amplitude',
-      details: [],
+      details: [
+        'Implemented full analytics system on mobile apps.',
+        'Made user behaviour dictate  the app development.',
+      ],
     ),
     Experience(
       imagePath: 'assets/images/uco.svg',
       title: 'Computer Engineer',
-      details: [],
+      details: [
+        'Learned the fundamentals of ML and AI.',
+        'Collaborated with local Open Source Group.',
+        'Experienced low level programming with C and C++.',
+      ],
     ),
   ];
 
