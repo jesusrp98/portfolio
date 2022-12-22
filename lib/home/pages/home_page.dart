@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
+import 'package:portfolio/home/widgets/about_card.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
 import 'package:portfolio/home/widgets/section_header.dart';
+import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/portfolio_app_bar.dart';
@@ -84,15 +86,8 @@ class HomePage extends StatelessWidget {
                     leading: const Icon(Icons.favorite_rounded),
                     title: const Text('ABOUT'),
                   ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
+                  for (final experience in PersonalInfo.about)
+                    AboutCard(experience: experience),
                   SectionHeader(
                     key: _resumeSectionKey,
                     leading: const Icon(Icons.history_edu_rounded),
