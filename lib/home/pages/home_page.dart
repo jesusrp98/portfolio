@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
-import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
@@ -67,27 +66,12 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const HeaderCard(),
-                  SectionHeader(
-                    key: _workSectionKey,
-                    leading: const Icon(Icons.verified_rounded),
-                    title: const Text('WORK'),
-                  ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
-                  const HomeCard(
-                    child: SizedBox(height: 300, width: 1200),
-                  ),
-                  SectionHeader(
-                    key: _aboutSectionKey,
-                    leading: const Icon(Icons.favorite_rounded),
-                    title: const Text('ABOUT'),
-                  ),
-                  for (final experience in PersonalInfo.about)
-                    AboutCard(experience: experience),
+                  // SectionHeader(
+                  //   key: _workSectionKey,
+                  //   leading: const Icon(Icons.verified_rounded),
+                  //   title: const Text('WORK'),
+                  // ),
+
                   SectionHeader(
                     key: _resumeSectionKey,
                     leading: const Icon(Icons.history_edu_rounded),
@@ -95,6 +79,13 @@ class HomePage extends StatelessWidget {
                   ),
                   const ResumeCard(),
                   const JourneyCard(),
+                  SectionHeader(
+                    key: _aboutSectionKey,
+                    leading: const Icon(Icons.favorite_rounded),
+                    title: const Text('ABOUT'),
+                  ),
+                  for (final experience in PersonalInfo.about)
+                    AboutCard(experience: experience),
                 ].separate(24),
               ),
               const FooterBar(),
@@ -107,14 +98,14 @@ class HomePage extends StatelessWidget {
 
   void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
     switch (tab) {
-      case HomeTabs.work:
-        Scrollable.ensureVisible(
-          _workSectionKey.currentContext!,
-          curve: _kScrollAnimationCurve,
-          duration: _kScrollAnimationDuration,
-          alignment: _kScrollAnimationAlignment,
-        );
-        break;
+      //   case HomeTabs.work:
+      //     Scrollable.ensureVisible(
+      //       _workSectionKey.currentContext!,
+      //       curve: _kScrollAnimationCurve,
+      //       duration: _kScrollAnimationDuration,
+      //       alignment: _kScrollAnimationAlignment,
+      //     );
+      //     break;
       case HomeTabs.about:
         Scrollable.ensureVisible(
           _aboutSectionKey.currentContext!,
@@ -135,9 +126,9 @@ class HomePage extends StatelessWidget {
 }
 
 enum HomeTabs {
-  work,
-  about,
-  resume;
+  // work,
+  resume,
+  about;
 
   String toNavigationString() => toBeginningOfSentenceCase(name)!;
 }
