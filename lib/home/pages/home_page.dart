@@ -15,7 +15,7 @@ import 'package:portfolio/widgets/portfolio_scaffold.dart';
 import 'package:portfolio/widgets/responsive_sliver_layout.dart';
 
 class HomePage extends StatelessWidget {
-  static final _workSectionKey = GlobalKey();
+  // static final _workSectionKey = GlobalKey();
   static final _aboutSectionKey = GlobalKey();
   static final _resumeSectionKey = GlobalKey();
 
@@ -71,7 +71,6 @@ class HomePage extends StatelessWidget {
                   //   leading: const Icon(Icons.verified_rounded),
                   //   title: const Text('WORK'),
                   // ),
-
                   SectionHeader(
                     key: _resumeSectionKey,
                     leading: const Icon(Icons.history_edu_rounded),
