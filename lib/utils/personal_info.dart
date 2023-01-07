@@ -54,16 +54,16 @@ class PersonalInfo {
       imagePath: 'assets/images/profile.jpg',
       title: 'Hello, World!',
       details: [
-        "I've been playing with computers ever since I was little, tinkering and getting to know them.",
-        'What passionates me is to create experiences around the products and services I use every single day.',
+        "I've been playing with computers ever since I was little, learning mostly on my own.",
+        "What I'm passionate about is creating experiences around the products and services I use every single day.",
       ],
     ),
     Experience(
       imagePath: 'assets/images/community.jpg',
       title: 'Community driven',
       details: [
-        "Since the beginning, I've been deeply involved with the developer community, organising and attending events.",
-        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - in 2019 💙',
+        "Since the beginning, I've been deeply involved with the developer community, organizing and attending events.",
+        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019 💙',
       ],
     ),
     Experience(
@@ -71,7 +71,7 @@ class PersonalInfo {
       title: 'Excellent cooker',
       details: [
         "Who doesn't love a good-looking and spongy vegan banana bread? 🍌🍞",
-        "Also, don't get me started on thai food 🥡🥢",
+        "Also, don't get me started on Thai food 🥡🥢",
       ],
     ),
   ];
