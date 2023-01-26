@@ -30,15 +30,15 @@ class DetailsTile extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         IconTheme.merge(
-          data: const IconThemeData(
+          data: IconThemeData(
             size: 32,
-            color: Colors.black87,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
           child: SizedBox.square(
             dimension: 40,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.surfaceVariant,
                 shape: BoxShape.circle,
                 border: Theme.of(context).brightness == Brightness.light
                     ? Border.all(color: Colors.black12, width: 2)

@@ -15,13 +15,13 @@ class PortfolioApp extends StatelessWidget {
         title: 'Jesus Rodriguez',
         debugShowCheckedModeBanner: false,
         routerConfig: router,
-        theme: PortfolioTheme.from(
-          colorScheme: ColorScheme.fromSeed(
+        theme: PortfolioTheme.fromColorScheme(
+          ColorScheme.fromSeed(
             seedColor: Colors.purple,
           ),
         ),
-        darkTheme: PortfolioTheme.from(
-          colorScheme: ColorScheme.fromSeed(
+        darkTheme: PortfolioTheme.fromColorScheme(
+          ColorScheme.fromSeed(
             seedColor: Colors.purple,
             brightness: Brightness.dark,
           ),

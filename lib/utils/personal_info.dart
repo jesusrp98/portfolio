@@ -63,7 +63,7 @@ class PersonalInfo {
       title: 'Community driven',
       details: [
         "Since the beginning, I've been deeply involved with the developer community, organizing and attending events.",
-        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019 💙',
+        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019.',
       ],
     ),
     Experience(
