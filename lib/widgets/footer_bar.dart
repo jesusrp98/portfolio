@@ -12,7 +12,7 @@ class FooterBar extends StatelessWidget {
 
     final openSourceButton = TextButton.icon(
       style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).textTheme.button?.color,
+        foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
       ),
       onPressed: () => launchUrlString(Urls.portfolioGitHubPage),
       icon: const Icon(Icons.launch_rounded),
@@ -21,7 +21,7 @@ class FooterBar extends StatelessWidget {
 
     final flutterButton = TextButton(
       style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).textTheme.button?.color,
+        foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
       ),
       onPressed: () => launchUrlString(Urls.flutterPage),
       child: const Text('Made with 💙 Flutter'),

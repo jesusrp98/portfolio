@@ -13,9 +13,10 @@ class DetailsTag extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(99),
-        color: Theme.of(context).textTheme.caption?.color?.withOpacity(0.04),
+        color: Theme.of(context).textTheme.bodySmall?.color?.withOpacity(0.04),
         border: Border.all(
-          color: Theme.of(context).textTheme.caption!.color!.withOpacity(0.16),
+          color:
+              Theme.of(context).textTheme.bodySmall!.color!.withOpacity(0.16),
           width: 2,
         ),
       ),
@@ -23,7 +24,7 @@ class DetailsTag extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
         child: DefaultTextStyle.merge(
           style: TextStyle(
-            color: Theme.of(context).textTheme.caption?.color,
+            color: Theme.of(context).textTheme.bodySmall?.color,
             fontWeight: FontWeight.w600,
             fontSize: 16,
           ),

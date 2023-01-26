@@ -13,7 +13,7 @@ class PersonalInfo {
           TextSpan(
             text: "I'm a ",
             style: TextStyle(
-              color: Theme.of(context).textTheme.caption?.color,
+              color: Theme.of(context).textTheme.bodySmall?.color,
             ),
           ),
           const TextSpan(
@@ -26,14 +26,14 @@ class PersonalInfo {
             text:
                 ', focused on crafting intuitive and beautiful digital experiences.',
             style: TextStyle(
-              color: Theme.of(context).textTheme.caption?.color,
+              color: Theme.of(context).textTheme.bodySmall?.color,
             ),
           ),
           const TextSpan(text: '\n\n'),
           TextSpan(
             text: 'With a background in ',
             style: TextStyle(
-              color: Theme.of(context).textTheme.caption?.color,
+              color: Theme.of(context).textTheme.bodySmall?.color,
             ),
           ),
           const TextSpan(
@@ -43,7 +43,7 @@ class PersonalInfo {
           TextSpan(
             text: ", I've always have had a passion for product design.",
             style: TextStyle(
-              color: Theme.of(context).textTheme.caption?.color,
+              color: Theme.of(context).textTheme.bodySmall?.color,
             ),
           ),
         ],

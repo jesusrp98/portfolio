@@ -26,7 +26,7 @@ class HomeDrawer extends StatelessWidget {
               PersonalInfo.name,
               style: Theme.of(context)
                   .textTheme
-                  .headline5
+                  .headlineSmall
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
@@ -35,7 +35,7 @@ class HomeDrawer extends StatelessWidget {
             ListTile(
               title: Text(
                 tab.toNavigationString(),
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               onTap: () {
                 onNavigationItemTap(context, tab);

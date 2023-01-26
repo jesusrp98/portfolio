@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         foregroundColor:
-                            Theme.of(context).textTheme.button?.color,
+                            Theme.of(context).textTheme.labelLarge?.color,
                       ),
                       onPressed: () => _onNavigationItemTap(context, tab),
                       child: Text(tab.toNavigationString()),

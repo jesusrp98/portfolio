@@ -49,7 +49,8 @@ class ExperienceTile extends StatelessWidget {
                           Text(
                             experience.subtitle!,
                             style: TextStyle(
-                              color: Theme.of(context).textTheme.caption?.color,
+                              color:
+                                  Theme.of(context).textTheme.bodySmall?.color,
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                             ),
@@ -71,7 +72,7 @@ class ExperienceTile extends StatelessWidget {
           Text(
             '· $task',
             style: TextStyle(
-              color: Theme.of(context).textTheme.caption?.color,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               fontSize: 16,
             ),
           )
