@@ -12,7 +12,7 @@ class FooterBar extends StatelessWidget {
 
     final openSourceButton = TextButton.icon(
       style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
+        foregroundColor: Theme.of(context).colorScheme.onBackground,
       ),
       onPressed: () => launchUrlString(Urls.portfolioGitHubPage),
       icon: const Icon(Icons.launch_rounded),

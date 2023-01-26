@@ -10,9 +10,7 @@ import 'package:portfolio/home/widgets/section_header.dart';
 import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
-import 'package:portfolio/widgets/portfolio_app_bar.dart';
-import 'package:portfolio/widgets/portfolio_scaffold.dart';
-import 'package:portfolio/widgets/responsive_sliver_layout.dart';
+import 'package:portfolio/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
   // static final _workSectionKey = GlobalKey();
@@ -29,8 +27,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
 
-    return PortfolioScaffold(
-      appBar: PortfolioAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: !isPhoneLayout
             ? Row(
                 children: [
@@ -38,7 +36,7 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         foregroundColor:
-                            Theme.of(context).textTheme.labelLarge?.color,
+                            Theme.of(context).colorScheme.onSurface,
                       ),
                       onPressed: () => _onNavigationItemTap(context, tab),
                       child: Text(tab.toNavigationString()),
@@ -58,38 +56,36 @@ class HomePage extends StatelessWidget {
               onNavigationItemTap: _onNavigationItemTap,
             )
           : null,
-      body: ResponsiveSliverLayout(
-        child: SliverToBoxAdapter(
-          child: Column(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const HeaderCard(),
-                  // SectionHeader(
-                  //   key: _workSectionKey,
-                  //   leading: const Icon(Icons.verified_rounded),
-                  //   title: const Text('WORK'),
-                  // ),
-                  SectionHeader(
-                    key: _resumeSectionKey,
-                    leading: const Icon(Icons.history_edu_rounded),
-                    title: const Text('RESUME'),
-                  ),
-                  const ResumeCard(),
-                  const JourneyCard(),
-                  SectionHeader(
-                    key: _aboutSectionKey,
-                    leading: const Icon(Icons.favorite_rounded),
-                    title: const Text('ABOUT'),
-                  ),
-                  for (final experience in PersonalInfo.about)
-                    AboutCard(experience: experience),
-                ].separate(24),
-              ),
-              const FooterBar(),
-            ],
-          ),
+      body: ResponsiveLayout(
+        child: Column(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const HeaderCard(),
+                // SectionHeader(
+                //   key: _workSectionKey,
+                //   leading: const Icon(Icons.verified_rounded),
+                //   title: const Text('WORK'),
+                // ),
+                SectionHeader(
+                  key: _resumeSectionKey,
+                  leading: const Icon(Icons.history_edu_rounded),
+                  title: const Text('RESUME'),
+                ),
+                const ResumeCard(),
+                const JourneyCard(),
+                SectionHeader(
+                  key: _aboutSectionKey,
+                  leading: const Icon(Icons.favorite_rounded),
+                  title: const Text('ABOUT'),
+                ),
+                for (final experience in PersonalInfo.about)
+                  AboutCard(experience: experience),
+              ].separate(16),
+            ),
+            const FooterBar(),
+          ],
         ),
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ResponsiveSliverLayout extends StatelessWidget {
+class ResponsiveLayout extends StatelessWidget {
   final Widget child;
   final double pageSize;
 
-  const ResponsiveSliverLayout({
+  const ResponsiveLayout({
     super.key,
     required this.child,
     this.pageSize = 1200,
@@ -12,17 +12,17 @@ class ResponsiveSliverLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverLayoutBuilder(
+    return LayoutBuilder(
       builder: (context, constraints) {
-        final isMobile = constraints.crossAxisExtent < pageSize;
+        final isMobile = constraints.maxWidth < pageSize;
 
-        return SliverPadding(
+        return SingleChildScrollView(
           padding: isMobile
-              ? EdgeInsets.zero
+              ? const EdgeInsets.symmetric(horizontal: 16)
               : EdgeInsets.symmetric(
-                  horizontal: (constraints.crossAxisExtent - pageSize) / 2,
+                  horizontal: (constraints.maxWidth - pageSize) / 2,
                 ),
-          sliver: child,
+          child: child,
         );
       },
     );
