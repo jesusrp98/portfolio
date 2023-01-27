@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
 class DetailsTile extends StatelessWidget {
   final Widget leading;
@@ -31,29 +32,24 @@ class DetailsTile extends StatelessWidget {
       children: [
         IconTheme.merge(
           data: IconThemeData(
-            size: 32,
             color: Theme.of(context).colorScheme.onSurfaceVariant,
+            size: 32,
           ),
           child: SizedBox.square(
             dimension: 40,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
                 shape: BoxShape.circle,
-                border: Theme.of(context).brightness == Brightness.light
-                    ? Border.all(color: Colors.black12, width: 2)
-                    : null,
               ),
               child: leading,
             ),
           ),
         ),
-        const SizedBox(width: 12),
+        const Gap(12),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ],
     );

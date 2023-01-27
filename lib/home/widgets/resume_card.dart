@@ -19,12 +19,9 @@ class ResumeCard extends StatelessWidget {
               leadingBuilder: (context, imagePath) => SizedBox.square(
                 dimension: 48,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
-                    border: Theme.of(context).brightness == Brightness.light
-                        ? Border.all(color: Colors.black12, width: 2)
-                        : null,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(6),

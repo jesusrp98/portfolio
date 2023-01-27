@@ -8,43 +8,29 @@ class PersonalInfo {
 
   static const name = 'Jesus Rodriguez';
 
-  static TextSpan description(BuildContext context) => TextSpan(
+  static TextSpan get description1 => const TextSpan(
         children: [
+          TextSpan(text: "I'm a "),
           TextSpan(
-            text: "I'm a ",
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
-          ),
-          const TextSpan(
             text: 'product developer',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
+            style: TextStyle(fontWeight: FontWeight.w600),
           ),
           TextSpan(
             text:
                 ', focused on crafting intuitive and beautiful digital experiences.',
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
           ),
-          const TextSpan(text: '\n\n'),
+        ],
+      );
+
+  static TextSpan get description2 => const TextSpan(
+        children: [
+          TextSpan(text: 'With a background in '),
           TextSpan(
-            text: 'With a background in ',
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
-          ),
-          const TextSpan(
             text: 'Computer Engineering',
             style: TextStyle(fontWeight: FontWeight.w600),
           ),
           TextSpan(
             text: ", I've always have had a passion for product design.",
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
           ),
         ],
       );

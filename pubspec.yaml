@@ -2,9 +2,6 @@ name: portfolio
 description: A new Flutter project.
 publish_to: 'none'
 
-platforms:
-  web:
-
 version: 1.0.0+1
 
 environment:

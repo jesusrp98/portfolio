@@ -12,9 +12,18 @@ class HeaderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final showHeaderImage = context.breakpoint >= LayoutBreakpoint.sm;
 
-    final titleFontSize = context.layout.value<double>(xs: 32, md: 48);
-    final titleFontHeight = context.layout.value<double>(xs: 48, md: 64);
-    final descriptionFontSize = context.layout.value<double>(xs: 16, md: 24);
+    final titleTextStyle = context.layout
+        .value(
+          xs: Theme.of(context).textTheme.headlineLarge,
+          md: Theme.of(context).textTheme.displayMedium,
+        )
+        ?.copyWith(fontWeight: FontWeight.w600);
+
+    final descriptionTextStyle = context.layout.value(
+      xs: Theme.of(context).textTheme.bodyLarge,
+      md: Theme.of(context).textTheme.headlineSmall,
+    );
+
     final headerImageHeight = context.layout.value<double>(xs: 96, md: 128);
 
     return HomeCard(
@@ -28,11 +37,7 @@ class HeaderCard extends StatelessWidget {
                 """
 Greetings! 👋
 I'm ${PersonalInfo.name}""",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: titleFontSize,
-                  height: titleFontHeight / titleFontSize,
-                ),
+                style: titleTextStyle,
               ),
               if (showHeaderImage)
                 Image.asset(
@@ -42,10 +47,12 @@ I'm ${PersonalInfo.name}""",
             ],
           ),
           AutoSizeText.rich(
-            PersonalInfo.description(context),
-            style: TextStyle(
-              fontSize: descriptionFontSize,
-            ),
+            PersonalInfo.description1,
+            style: descriptionTextStyle,
+          ),
+          AutoSizeText.rich(
+            PersonalInfo.description2,
+            style: descriptionTextStyle,
           ),
           const Divider(),
           Align(
@@ -74,7 +81,7 @@ I'm ${PersonalInfo.name}""",
               ],
             ),
           ),
-        ].separate(24),
+        ].separate(16),
       ),
     );
   }
