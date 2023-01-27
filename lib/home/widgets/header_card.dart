@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/details_tile.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
@@ -33,11 +34,28 @@ class HeaderCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                """
-Greetings! 👋
-I'm ${PersonalInfo.name}""",
-                style: titleTextStyle,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Greetings!',
+                        style: titleTextStyle,
+                      ),
+                      const Gap(16),
+                      Icon(
+                        Icons.waving_hand_outlined,
+                        color: Theme.of(context).colorScheme.onSurface,
+                        size: titleTextStyle?.fontSize,
+                      )
+                    ],
+                  ),
+                  Text(
+                    "I'm ${PersonalInfo.name}",
+                    style: titleTextStyle,
+                  ),
+                ],
               ),
               if (showHeaderImage)
                 Image.asset(

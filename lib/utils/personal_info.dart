@@ -56,8 +56,8 @@ class PersonalInfo {
       imagePath: 'assets/images/food.jpg',
       title: 'Excellent cooker',
       details: [
-        "Who doesn't love a good-looking and spongy vegan banana bread? 🍌🍞",
-        "Also, don't get me started on Thai food 🥡🥢",
+        "Who doesn't love a good-looking and spongy vegan banana bread?",
+        "Also, don't get me started on Thai food.",
       ],
     ),
   ];
