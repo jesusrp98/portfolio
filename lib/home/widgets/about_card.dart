@@ -4,7 +4,7 @@ import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 
 class AboutCard extends StatelessWidget {
-  static const _imageDimension = 164.0;
+  static const _minImageHeight = 164.0;
 
   final Experience experience;
 
@@ -16,17 +16,20 @@ class AboutCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: _imageDimension),
+      constraints: const BoxConstraints(minHeight: _minImageHeight),
       child: HomeCard(
         padding: EdgeInsets.zero,
         child: IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(
-                experience.imagePath,
-                width: _imageDimension,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  experience.imagePath,
+                  width: _minImageHeight,
+                  fit: BoxFit.cover,
+                ),
               ),
               Expanded(
                 child: Padding(
@@ -36,20 +39,19 @@ class AboutCard extends StatelessWidget {
                     children: [
                       Text(
                         experience.title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 26,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       ...[
                         for (final detail in experience.details)
                           Text(
                             detail,
-                            style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodySmall?.color,
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.normal),
                           ),
                       ],
                     ].separate(16),
