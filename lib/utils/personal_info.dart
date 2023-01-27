@@ -112,6 +112,16 @@ class PersonalInfo {
 
   static const journey = [
     Experience(
+      imagePath: 'assets/images/bejao.png',
+      title: 'BeJao',
+      subtitle: 'Flutter Developer',
+      trailing: '2022',
+      details: [
+        'Implemented complex multimedia-powered exercice guide experience.',
+        'Helped to design and develop custom dynamic Material theme.',
+      ],
+    ),
+    Experience(
       imagePath: 'assets/images/fave.jpg',
       title: 'Fave',
       subtitle: 'Flutter Developer',
