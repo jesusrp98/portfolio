@@ -8,6 +8,7 @@ import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
 import 'package:portfolio/home/widgets/section_header.dart';
+import 'package:portfolio/utils/extensions/layout_phone_extension.dart';
 import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
@@ -26,11 +27,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
-
     return Scaffold(
       appBar: AppBar(
-        title: !isPhoneLayout
+        title: !context.isLayoutPhone
             ? Row(
                 children: [
                   for (final tab in HomeTabs.values)
@@ -52,7 +51,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: isPhoneLayout
+      drawer: context.isLayoutPhone
           ? HomeDrawer(
               onNavigationItemTap: _onNavigationItemTap,
             )

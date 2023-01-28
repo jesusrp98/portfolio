@@ -20,7 +20,7 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 8,
+      elevation: 6,
       clipBehavior: Clip.antiAlias,
       child: Padding(
         padding: padding ?? resolvePadding(context),
