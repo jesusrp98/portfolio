@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
-import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
@@ -15,7 +14,7 @@ import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
-  static final _workSectionKey = GlobalKey();
+  // static final _workSectionKey = GlobalKey();
   static final _aboutSectionKey = GlobalKey();
   static final _resumeSectionKey = GlobalKey();
 
@@ -63,23 +62,11 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HeaderCard(),
-                SectionHeader(
-                  key: _workSectionKey,
-                  leading: const Icon(Icons.verified_rounded),
-                  title: const Text('WORK'),
-                ),
-                HomeCard(
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 128,
-                    child: Center(
-                      child: Text(
-                        'Coming soon...',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                    ),
-                  ),
-                ),
+                // SectionHeader(
+                //   key: _workSectionKey,
+                //   leading: const Icon(Icons.verified_rounded),
+                //   title: const Text('WORK'),
+                // ),
                 SectionHeader(
                   key: _aboutSectionKey,
                   leading: const Icon(Icons.favorite_rounded),
@@ -105,14 +92,14 @@ class HomePage extends StatelessWidget {
 
   void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
     switch (tab) {
-      case HomeTabs.work:
-        Scrollable.ensureVisible(
-          _workSectionKey.currentContext!,
-          curve: _kScrollAnimationCurve,
-          duration: _kScrollAnimationDuration,
-          alignment: _kScrollAnimationAlignment,
-        );
-        break;
+      // case HomeTabs.work:
+      //   Scrollable.ensureVisible(
+      //     _workSectionKey.currentContext!,
+      //     curve: _kScrollAnimationCurve,
+      //     duration: _kScrollAnimationDuration,
+      //     alignment: _kScrollAnimationAlignment,
+      //   );
+      //   break;
       case HomeTabs.about:
         Scrollable.ensureVisible(
           _aboutSectionKey.currentContext!,
@@ -133,7 +120,7 @@ class HomePage extends StatelessWidget {
 }
 
 enum HomeTabs {
-  work,
+  // work,
   about,
   resume;
 
