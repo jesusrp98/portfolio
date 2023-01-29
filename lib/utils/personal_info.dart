@@ -8,43 +8,29 @@ class PersonalInfo {
 
   static const name = 'Jesus Rodriguez';
 
-  static TextSpan description(BuildContext context) => TextSpan(
+  static TextSpan get description1 => const TextSpan(
         children: [
+          TextSpan(text: "I'm a "),
           TextSpan(
-            text: "I'm a ",
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
-          ),
-          const TextSpan(
             text: 'product developer',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
+            style: TextStyle(fontWeight: FontWeight.w600),
           ),
           TextSpan(
             text:
                 ', focused on crafting intuitive and beautiful digital experiences.',
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
           ),
-          const TextSpan(text: '\n\n'),
+        ],
+      );
+
+  static TextSpan get description2 => const TextSpan(
+        children: [
+          TextSpan(text: 'With a background in '),
           TextSpan(
-            text: 'With a background in ',
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
-          ),
-          const TextSpan(
             text: 'Computer Engineering',
             style: TextStyle(fontWeight: FontWeight.w600),
           ),
           TextSpan(
             text: ", I've always have had a passion for product design.",
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-            ),
           ),
         ],
       );
@@ -63,15 +49,15 @@ class PersonalInfo {
       title: 'Community driven',
       details: [
         "Since the beginning, I've been deeply involved with the developer community, organizing and attending events.",
-        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019 💙',
+        'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019.',
       ],
     ),
     Experience(
       imagePath: 'assets/images/food.jpg',
       title: 'Excellent cooker',
       details: [
-        "Who doesn't love a good-looking and spongy vegan banana bread? 🍌🍞",
-        "Also, don't get me started on Thai food 🥡🥢",
+        "Who doesn't love a good-looking and spongy vegan banana bread?",
+        "Also, don't get me started on Thai food.",
       ],
     ),
   ];
@@ -125,6 +111,16 @@ class PersonalInfo {
   ];
 
   static const journey = [
+    Experience(
+      imagePath: 'assets/images/bejao.png',
+      title: 'BeJao',
+      subtitle: 'Flutter Developer',
+      trailing: '2022',
+      details: [
+        'Implemented complex multimedia-powered exercice guide experience.',
+        'Helped to design and develop custom dynamic Material theme.',
+      ],
+    ),
     Experience(
       imagePath: 'assets/images/fave.jpg',
       title: 'Fave',

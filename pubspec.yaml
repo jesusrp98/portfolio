@@ -2,9 +2,6 @@ name: portfolio
 description: A new Flutter project.
 publish_to: 'none'
 
-platforms:
-  web:
-
 version: 1.0.0+1
 
 environment:
@@ -19,6 +16,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   font_awesome_flutter: ^10.3.0
+  gap: ^2.0.1
   go_router: ^6.0.0
   intl: ^0.18.0
   layout: ^1.0.3

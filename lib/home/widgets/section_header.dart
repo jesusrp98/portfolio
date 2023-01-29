@@ -17,17 +17,19 @@ class SectionHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconTheme.merge(
-          data: const IconThemeData(size: 38),
+          data: IconThemeData(
+            color: Theme.of(context).colorScheme.onBackground,
+            size: 40,
+          ),
           child: leading,
         ),
         DefaultTextStyle.merge(
-          style: const TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 32,
-          ),
+          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
           child: title,
         ),
-      ].separate(16),
+      ].separate(8),
     );
   }
 }

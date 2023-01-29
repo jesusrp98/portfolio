@@ -7,12 +7,11 @@ import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
 import 'package:portfolio/home/widgets/section_header.dart';
+import 'package:portfolio/utils/extensions/layout_phone_extension.dart';
 import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
-import 'package:portfolio/widgets/portfolio_app_bar.dart';
-import 'package:portfolio/widgets/portfolio_scaffold.dart';
-import 'package:portfolio/widgets/responsive_sliver_layout.dart';
+import 'package:portfolio/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
   // static final _workSectionKey = GlobalKey();
@@ -27,18 +26,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
-
-    return PortfolioScaffold(
-      appBar: PortfolioAppBar(
-        title: !isPhoneLayout
+    return Scaffold(
+      appBar: AppBar(
+        title: !context.isLayoutPhone
             ? Row(
                 children: [
                   for (final tab in HomeTabs.values)
                     TextButton(
                       style: TextButton.styleFrom(
                         foregroundColor:
-                            Theme.of(context).textTheme.labelLarge?.color,
+                            Theme.of(context).colorScheme.onSurface,
                       ),
                       onPressed: () => _onNavigationItemTap(context, tab),
                       child: Text(tab.toNavigationString()),
@@ -53,43 +50,41 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: isPhoneLayout
+      drawer: context.isLayoutPhone
           ? HomeDrawer(
               onNavigationItemTap: _onNavigationItemTap,
             )
           : null,
-      body: ResponsiveSliverLayout(
-        child: SliverToBoxAdapter(
-          child: Column(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const HeaderCard(),
-                  // SectionHeader(
-                  //   key: _workSectionKey,
-                  //   leading: const Icon(Icons.verified_rounded),
-                  //   title: const Text('WORK'),
-                  // ),
-                  SectionHeader(
-                    key: _resumeSectionKey,
-                    leading: const Icon(Icons.history_edu_rounded),
-                    title: const Text('RESUME'),
-                  ),
-                  const ResumeCard(),
-                  const JourneyCard(),
-                  SectionHeader(
-                    key: _aboutSectionKey,
-                    leading: const Icon(Icons.favorite_rounded),
-                    title: const Text('ABOUT'),
-                  ),
-                  for (final experience in PersonalInfo.about)
-                    AboutCard(experience: experience),
-                ].separate(24),
-              ),
-              const FooterBar(),
-            ],
-          ),
+      body: ResponsiveLayout(
+        child: Column(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const HeaderCard(),
+                // SectionHeader(
+                //   key: _workSectionKey,
+                //   leading: const Icon(Icons.verified_rounded),
+                //   title: const Text('WORK'),
+                // ),
+                SectionHeader(
+                  key: _aboutSectionKey,
+                  leading: const Icon(Icons.favorite_rounded),
+                  title: const Text('ABOUT'),
+                ),
+                for (final experience in PersonalInfo.about)
+                  AboutCard(experience: experience),
+                SectionHeader(
+                  key: _resumeSectionKey,
+                  leading: const Icon(Icons.history_edu_rounded),
+                  title: const Text('RESUME'),
+                ),
+                const ResumeCard(),
+                const JourneyCard(),
+              ].separate(16),
+            ),
+            const FooterBar(),
+          ],
         ),
       ),
     );
@@ -97,14 +92,14 @@ class HomePage extends StatelessWidget {
 
   void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
     switch (tab) {
-      //   case HomeTabs.work:
-      //     Scrollable.ensureVisible(
-      //       _workSectionKey.currentContext!,
-      //       curve: _kScrollAnimationCurve,
-      //       duration: _kScrollAnimationDuration,
-      //       alignment: _kScrollAnimationAlignment,
-      //     );
-      //     break;
+      // case HomeTabs.work:
+      //   Scrollable.ensureVisible(
+      //     _workSectionKey.currentContext!,
+      //     curve: _kScrollAnimationCurve,
+      //     duration: _kScrollAnimationDuration,
+      //     alignment: _kScrollAnimationAlignment,
+      //   );
+      //   break;
       case HomeTabs.about:
         Scrollable.ensureVisible(
           _aboutSectionKey.currentContext!,
@@ -126,8 +121,8 @@ class HomePage extends StatelessWidget {
 
 enum HomeTabs {
   // work,
-  resume,
-  about;
+  about,
+  resume;
 
   String toNavigationString() => toBeginningOfSentenceCase(name)!;
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/router/app_router.dart';
-import 'package:portfolio/utils/app_styles.dart';
+import 'package:portfolio/utils/portfolio_theme.dart';
 
-class App extends StatelessWidget {
+class PortfolioApp extends StatelessWidget {
   static final router = AppRouter.initialize();
 
-  const App({super.key});
+  const PortfolioApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,15 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Jesus Rodriguez',
         debugShowCheckedModeBanner: false,
-        theme: AppStyles.light(),
-        darkTheme: AppStyles.dark(),
-        routerDelegate: router.routerDelegate,
-        routeInformationParser: router.routeInformationParser,
-        routeInformationProvider: router.routeInformationProvider,
+        routerConfig: router,
+        theme: PortfolioTheme.from(
+          seedColor: Colors.greenAccent,
+          brightness: Brightness.light,
+        ),
+        darkTheme: PortfolioTheme.from(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
       ),
     );
   }

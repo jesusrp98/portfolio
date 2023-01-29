@@ -21,13 +21,13 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16).copyWith(bottom: 12),
+            padding: const EdgeInsets.all(16),
             child: Text(
               PersonalInfo.name,
               style: Theme.of(context)
                   .textTheme
-                  .headlineSmall
-                  ?.copyWith(fontWeight: FontWeight.bold),
+                  .headlineMedium
+                  ?.copyWith(fontWeight: FontWeight.w500),
             ),
           ),
           const Divider(),
@@ -35,7 +35,7 @@ class HomeDrawer extends StatelessWidget {
             ListTile(
               title: Text(
                 tab.toNavigationString(),
-                style: Theme.of(context).textTheme.titleLarge,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               onTap: () {
                 onNavigationItemTap(context, tab);

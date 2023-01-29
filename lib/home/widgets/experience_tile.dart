@@ -24,57 +24,40 @@ class ExperienceTile extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  leadingBuilder(context, experience.imagePath),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 4),
-                          child: AutoSizeText(
-                            experience.title,
-                            maxLines: 2,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ),
-                        if (experience.subtitle != null)
-                          Text(
-                            experience.subtitle!,
-                            style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodySmall?.color,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                      ],
-                    ),
-                  )
-                ].separate(16),
-              ),
-            ),
-            if (experience.trailing != null &&
-                context.breakpoint != LayoutBreakpoint.xs)
-              DetailsTag(
-                child: Text(experience.trailing!),
-              ),
-          ],
+        ListTile(
+          contentPadding: EdgeInsets.zero,
+          leading: leadingBuilder(context, experience.imagePath),
+          title: AutoSizeText(
+            experience.title,
+            maxLines: 2,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge
+                ?.copyWith(fontWeight: FontWeight.w500),
+          ),
+          subtitle: experience.subtitle != null
+              ? Text(
+                  experience.subtitle!,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(fontWeight: FontWeight.normal),
+                )
+              : null,
+          trailing: experience.trailing != null &&
+                  context.breakpoint != LayoutBreakpoint.xs
+              ? DetailsTag(
+                  child: Text(experience.trailing!),
+                )
+              : null,
         ),
         for (final task in experience.details)
           Text(
             '· $task',
-            style: TextStyle(
-              color: Theme.of(context).textTheme.bodySmall?.color,
-              fontSize: 16,
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium
+                ?.copyWith(fontWeight: FontWeight.normal),
           )
       ].separate(8),
     );

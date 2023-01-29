@@ -19,23 +19,12 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 12,
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: padding ?? resolvePadding(context),
-          child: child,
-        ),
+    return Card(
+      elevation: 6,
+      clipBehavior: Clip.antiAlias,
+      child: Padding(
+        padding: padding ?? resolvePadding(context),
+        child: child,
       ),
     );
   }

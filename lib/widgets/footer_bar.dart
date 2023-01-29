@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:layout/layout.dart';
-import 'package:portfolio/utils/urls.dart';
+import 'package:gap/gap.dart';
+import 'package:portfolio/utils/extensions/layout_phone_extension.dart';
+import 'package:portfolio/utils/portfolio_urls.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class FooterBar extends StatelessWidget {
@@ -8,44 +9,32 @@ class FooterBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPhoneLayout = context.breakpoint < LayoutBreakpoint.sm;
-
-    final openSourceButton = TextButton.icon(
-      style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
-      ),
-      onPressed: () => launchUrlString(Urls.portfolioGitHubPage),
-      icon: const Icon(Icons.launch_rounded),
-      label: const Text('This page is open source!'),
-    );
-
-    final flutterButton = TextButton(
-      style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
-      ),
-      onPressed: () => launchUrlString(Urls.flutterPage),
-      child: const Text('Made with 💙 Flutter'),
-    );
-
-    if (isPhoneLayout) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        child: Column(
-          children: [
-            openSourceButton,
-            flutterButton,
-          ].separate(12),
-        ),
-      );
-    }
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Row(
+      child: Flex(
+        direction: context.isLayoutPhone ? Axis.vertical : Axis.horizontal,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          openSourceButton,
-          flutterButton,
+          TextButton.icon(
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(context).colorScheme.onBackground,
+            ),
+            onPressed: () => launchUrlString(PortfolioUrls.portfolioGitHubPage),
+            icon: const Icon(Icons.launch_rounded),
+            label: const Text('This page is open source!'),
+          ),
+          if (context.isLayoutPhone) const Gap(12),
+          TextButton.icon(
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(context).textTheme.labelLarge?.color,
+            ),
+            onPressed: () => launchUrlString(PortfolioUrls.flutterPage),
+            icon: const Icon(
+              Icons.favorite_rounded,
+              color: Colors.blue,
+            ),
+            label: const Text('Made with Flutter'),
+          ),
         ],
       ),
     );
