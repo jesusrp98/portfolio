@@ -84,16 +84,16 @@ class HeaderCard extends StatelessWidget {
                   leading: Icon(Icons.person_rounded),
                   title: 'He/Him',
                 ),
-                DetailsTile.svg(
-                  assetPath: 'assets/images/spanish.svg',
+                DetailsTile.asset(
+                  assetPath: 'assets/images/spanish.png',
                   title: 'Spanish',
                 ),
-                DetailsTile.svg(
-                  assetPath: 'assets/images/english.svg',
+                DetailsTile.asset(
+                  assetPath: 'assets/images/english.png',
                   title: 'English',
                 ),
-                DetailsTile.svg(
-                  assetPath: 'assets/images/german.svg',
+                DetailsTile.asset(
+                  assetPath: 'assets/images/german.png',
                   title: 'German',
                 ),
               ],

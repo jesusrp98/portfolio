@@ -64,7 +64,7 @@ class PersonalInfo {
 
   static const resume = [
     Experience(
-      imagePath: 'assets/images/flutter.svg',
+      imagePath: 'assets/images/flutter.jpg',
       title: 'Flutter',
       details: [
         'Realized complex designs and fluent animations.',
@@ -74,7 +74,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/figma.svg',
+      imagePath: 'assets/images/figma.jpg',
       title: 'Figma',
       details: [
         'Implemented complete design systems.',
@@ -83,7 +83,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/firebase.svg',
+      imagePath: 'assets/images/firebase.jpg',
       title: 'Firebase',
       details: [
         'Played with offline data persistence.',
@@ -92,7 +92,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/amplitude.svg',
+      imagePath: 'assets/images/amplitude.jpg',
       title: 'Amplitude',
       details: [
         'Implemented full analytics system on mobile apps.',
@@ -100,7 +100,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/uco.svg',
+      imagePath: 'assets/images/uco.jpg',
       title: 'Computer Engineer',
       details: [
         'Learned the fundamentals of ML and AI.',
@@ -170,7 +170,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/wealize.png',
+      imagePath: 'assets/images/wealize.jpg',
       title: 'Wealize',
       subtitle: 'Full-Stack Developer',
       trailing: '2019 - 2020',

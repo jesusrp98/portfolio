@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/home/widgets/experience_tile.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/utils/extensions/separate_with_extension.dart';
@@ -16,17 +15,10 @@ class ResumeCard extends StatelessWidget {
           for (final experience in PersonalInfo.resume)
             ExperienceTile(
               experience: experience,
-              leadingBuilder: (context, imagePath) => SizedBox.square(
-                dimension: 48,
-                child: DecoratedBox(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6),
-                    child: SvgPicture.asset(imagePath),
-                  ),
+              leadingBuilder: (context, imagePath) => ClipOval(
+                child: Image.asset(
+                  imagePath,
+                  width: 48,
                 ),
               ),
             ),

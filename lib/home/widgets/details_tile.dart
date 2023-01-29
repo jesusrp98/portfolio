@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
 class DetailsTile extends StatelessWidget {
@@ -12,14 +11,14 @@ class DetailsTile extends StatelessWidget {
     required this.title,
   });
 
-  factory DetailsTile.svg({
+  factory DetailsTile.asset({
     required String assetPath,
     required String title,
   }) {
     return DetailsTile(
       leading: Padding(
         padding: const EdgeInsets.all(5),
-        child: SvgPicture.asset(assetPath),
+        child: Image.asset(assetPath),
       ),
       title: title,
     );
