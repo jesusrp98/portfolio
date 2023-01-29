@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:layout/layout.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 
 class SectionHeader extends StatelessWidget {
   final Widget leading;
@@ -19,7 +19,7 @@ class SectionHeader extends StatelessWidget {
         IconTheme.merge(
           data: IconThemeData(
             color: Theme.of(context).colorScheme.onBackground,
-            size: 40,
+            size: GridSpacing.s40,
           ),
           child: leading,
         ),
@@ -29,7 +29,7 @@ class SectionHeader extends StatelessWidget {
               ),
           child: title,
         ),
-      ].separate(8),
+      ].separateWith(GridSpacing.gap8),
     );
   }
 }

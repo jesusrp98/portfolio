@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/details_tile.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
@@ -43,7 +43,7 @@ class HeaderCard extends StatelessWidget {
                         'Greetings!',
                         style: titleTextStyle,
                       ),
-                      const Gap(16),
+                      GridSpacing.gap16,
                       Icon(
                         Icons.waving_hand_outlined,
                         color: Theme.of(context).colorScheme.onSurface,
@@ -77,8 +77,8 @@ class HeaderCard extends StatelessWidget {
             child: Wrap(
               alignment: WrapAlignment.center,
               runAlignment: WrapAlignment.center,
-              spacing: 64,
-              runSpacing: 24,
+              spacing: GridSpacing.s64,
+              runSpacing: GridSpacing.s24,
               children: [
                 const DetailsTile(
                   leading: Icon(Icons.person_rounded),
@@ -99,7 +99,7 @@ class HeaderCard extends StatelessWidget {
               ],
             ),
           ),
-        ].separate(16),
+        ].separateWith(GridSpacing.gap16),
       ),
     );
   }

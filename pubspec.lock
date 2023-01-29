@@ -52,7 +52,7 @@ packages:
     source: hosted
     version: "10.3.0"
   gap:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: gap
       sha256: "6e35ee60d5bbc61b0bec97cc5ba7ed32f62f1f62449e281ea77677479418a15d"
@@ -67,6 +67,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.1"
+  grid_point_4:
+    dependency: "direct main"
+    description:
+      name: grid_point_4
+      sha256: "45a083d7def086b0f472f0971a4e9be6a319628850ece819a4519b645e217be1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   intl:
     dependency: "direct main"
     description:
@@ -217,5 +225,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.18.0 <4.0.0"
+  dart: ">=2.19.0 <4.0.0"
   flutter: ">=3.3.0"

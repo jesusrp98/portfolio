@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 
 class HomeCard extends StatelessWidget {
@@ -13,8 +14,8 @@ class HomeCard extends StatelessWidget {
 
   static EdgeInsets resolvePadding(BuildContext context) =>
       context.layout.value(
-        xs: const EdgeInsets.all(16),
-        md: const EdgeInsets.all(24),
+        xs: const EdgeInsets.all(GridSpacing.s16),
+        md: const EdgeInsets.all(GridSpacing.s24),
       );
 
   @override

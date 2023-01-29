@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:intl/intl.dart';
-import 'package:layout/layout.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
@@ -40,12 +40,12 @@ class HomePage extends StatelessWidget {
                       onPressed: () => _onNavigationItemTap(context, tab),
                       child: Text(tab.toNavigationString()),
                     ),
-                ].separate(8),
+                ].separateWith(GridSpacing.gap8),
               )
             : null,
         actions: const [
           Padding(
-            padding: EdgeInsetsDirectional.only(end: 16),
+            padding: EdgeInsetsDirectional.only(end: GridSpacing.s16),
             child: ContactActions(),
           ),
         ],
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const ResumeCard(),
                 const JourneyCard(),
-              ].separate(16),
+              ].separateWith(GridSpacing.gap16),
             ),
             const FooterBar(),
           ],

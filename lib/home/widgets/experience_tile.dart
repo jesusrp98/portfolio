@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/details_tag.dart';
@@ -59,7 +60,7 @@ class ExperienceTile extends StatelessWidget {
                 .titleMedium
                 ?.copyWith(fontWeight: FontWeight.normal),
           )
-      ].separate(8),
+      ].separateWith(GridSpacing.gap8),
     );
   }
 }

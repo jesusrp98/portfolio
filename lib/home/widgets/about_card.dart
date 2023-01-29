@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:layout/layout.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 
@@ -42,7 +41,7 @@ class AboutCard extends StatelessWidget {
                             .headlineMedium
                             ?.copyWith(fontWeight: FontWeight.w500),
                       ),
-                      const Gap(16),
+                      GridSpacing.gap16,
                       ...[
                         for (final detail in experience.details)
                           Text(
@@ -52,7 +51,7 @@ class AboutCard extends StatelessWidget {
                                 .titleMedium
                                 ?.copyWith(fontWeight: FontWeight.normal),
                           ),
-                      ].separate(12),
+                      ].separateWith(GridSpacing.gap12),
                     ],
                   ),
                 ),

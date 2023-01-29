@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 
 class DetailsTile extends StatelessWidget {
   final Widget leading;
@@ -17,7 +17,7 @@ class DetailsTile extends StatelessWidget {
   }) {
     return DetailsTile(
       leading: Padding(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(GridSpacing.s4),
         child: Image.asset(assetPath),
       ),
       title: title,
@@ -32,10 +32,10 @@ class DetailsTile extends StatelessWidget {
         IconTheme.merge(
           data: IconThemeData(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
-            size: 32,
+            size: GridSpacing.s32,
           ),
           child: SizedBox.square(
-            dimension: 40,
+            dimension: GridSpacing.s40,
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
@@ -45,7 +45,7 @@ class DetailsTile extends StatelessWidget {
             ),
           ),
         ),
-        const Gap(12),
+        GridSpacing.gap12,
         Text(
           title,
           style: Theme.of(context).textTheme.bodyLarge,

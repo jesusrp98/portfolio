@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grid_point_4/grid_point_4.dart';
 import 'package:portfolio/home/pages/home_page.dart';
 import 'package:portfolio/utils/personal_info.dart';
 
@@ -21,7 +22,7 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(GridSpacing.s16),
             child: Text(
               PersonalInfo.name,
               style: Theme.of(context)
