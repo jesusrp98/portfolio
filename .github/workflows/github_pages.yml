@@ -36,7 +36,7 @@ jobs:
           channel: stable
 
       - name: Build web
-        run: flutter build web --release
+        run: flutter build web --release --web-renderer canvaskit
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
