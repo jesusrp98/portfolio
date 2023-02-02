@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
+import 'package:layout/layout.dart';
 import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 
@@ -20,14 +21,15 @@ class AboutCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  experience.imagePath,
-                  width: _minImageHeight,
-                  fit: BoxFit.cover,
+              if (context.breakpoint != LayoutBreakpoint.xs)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    experience.imagePath,
+                    width: _minImageHeight,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
               Expanded(
                 child: Padding(
                   padding: HomeCard.resolvePadding(context),

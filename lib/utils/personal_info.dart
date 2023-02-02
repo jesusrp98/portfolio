@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:portfolio/home/models/experience.dart';
+import 'package:portfolio/home/models/work.dart';
 
 class PersonalInfo {
   const PersonalInfo._();
@@ -34,6 +35,17 @@ class PersonalInfo {
           ),
         ],
       );
+
+  static const flutterPackages = Work(
+    title: 'Flutter Packages',
+    subtitle:
+        'Collection of all my open-source packages for the Flutter framework.',
+    tags: [
+      'Flutter',
+      'Open Source',
+      'Community',
+    ],
+  );
 
   static const about = [
     Experience(
