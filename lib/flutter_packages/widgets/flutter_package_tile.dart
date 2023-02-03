@@ -5,12 +5,10 @@ import 'package:pub_api_client/pub_api_client.dart';
 
 class FlutterPackageTile extends StatelessWidget {
   final PubPackage package;
-  final Widget? example;
 
   const FlutterPackageTile({
     super.key,
     required this.package,
-    this.example,
   });
 
   @override
@@ -40,10 +38,6 @@ class FlutterPackageTile extends StatelessWidget {
             color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
-        if (example != null) ...[
-          const Divider(),
-          example!,
-        ]
       ].separateWith(GridSpacing.gap8),
     );
   }

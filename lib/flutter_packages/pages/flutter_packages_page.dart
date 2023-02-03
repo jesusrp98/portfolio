@@ -41,16 +41,18 @@ class _FlutterPackagesPageState extends State<FlutterPackagesPage> {
       body: BlocConsumer<FlutterPackagesCubit, FlutterPackagesState>(
         listenWhen: (previous, current) => previous.error != current.error,
         listener: (context, state) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.error.toString()),
-              action: SnackBarAction(
-                label: 'RETRY',
-                onPressed:
-                    context.read<FlutterPackagesCubit>().fetchFlutterPackages,
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              SnackBar(
+                content: Text(state.error.toString()),
+                action: SnackBarAction(
+                  label: 'RETRY',
+                  onPressed:
+                      context.read<FlutterPackagesCubit>().fetchFlutterPackages,
+                ),
               ),
-            ),
-          );
+            );
         },
         builder: (context, state) => _FlutterPackagesView(state),
       ),
@@ -85,10 +87,7 @@ class _FlutterPackagesView extends StatelessWidget {
                     onTap: () => launchUrlString(package.url),
                     child: Padding(
                       padding: HomeCard.resolvePadding(context),
-                      child: FlutterPackageTile(
-                        package: package,
-                        example: _getExampleWidget(package.name),
-                      ),
+                      child: FlutterPackageTile(package: package),
                     ),
                   ),
                 ),
@@ -98,24 +97,5 @@ class _FlutterPackagesView extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget? _getExampleWidget(String packageName) {
-    switch (packageName) {
-      case 'expand_widget':
-        return const FlutterLogo();
-      case 'search_page':
-        return const FlutterLogo();
-      case 'row_item':
-        return const FlutterLogo();
-      case 'big_tip':
-        return const FlutterLogo();
-      case 'adwaita_icons':
-        return const FlutterLogo();
-      case 'grid_point_4':
-        return const FlutterLogo();
-      default:
-        return null;
-    }
   }
 }
