@@ -9,24 +9,27 @@ class ContactActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          tooltip: 'Email',
-          icon: const Icon(Icons.email_rounded),
-          onPressed: () => launchUrlString(PortfolioUrls.email),
-        ),
-        IconButton(
-          tooltip: 'LinkedIn',
-          icon: const FaIcon(FontAwesomeIcons.linkedin),
-          onPressed: () => launchUrlString(PortfolioUrls.linkedIn),
-        ),
-        IconButton(
-          tooltip: 'GitHub',
-          icon: const FaIcon(FontAwesomeIcons.github),
-          onPressed: () => launchUrlString(PortfolioUrls.gitHub),
-        ),
-      ].separateWith(GridSpacing.gap8),
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(end: GridSpacing.s16),
+      child: Row(
+        children: [
+          IconButton(
+            tooltip: 'Email',
+            icon: const Icon(Icons.email_rounded),
+            onPressed: () => launchUrlString(PortfolioUrls.email),
+          ),
+          IconButton(
+            tooltip: 'LinkedIn',
+            icon: const FaIcon(FontAwesomeIcons.linkedin),
+            onPressed: () => launchUrlString(PortfolioUrls.linkedIn),
+          ),
+          IconButton(
+            tooltip: 'GitHub',
+            icon: const FaIcon(FontAwesomeIcons.github),
+            onPressed: () => launchUrlString(PortfolioUrls.gitHub),
+          ),
+        ].separateWith(GridSpacing.gap8),
+      ),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:intl/intl.dart';
+import 'package:portfolio/flutter_packages/routes/flutter_packages_route.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
 import 'package:portfolio/home/widgets/flutter_packages_card.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
@@ -46,10 +48,7 @@ class HomePage extends StatelessWidget {
               )
             : null,
         actions: const [
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: GridSpacing.s16),
-            child: ContactActions(),
-          ),
+          ContactActions(),
         ],
       ),
       drawer: context.isLayoutPhone
@@ -72,7 +71,9 @@ class HomePage extends StatelessWidget {
                 WorkCard(
                   leading: const FlutterPackagesCard(),
                   work: PersonalInfo.flutterPackages,
-                  onTap: () {},
+                  onTap: () => context.push(
+                    FlutterPackagesRoute.flutterPackagesPath,
+                  ),
                 ),
                 SectionHeader(
                   key: _aboutSectionKey,
