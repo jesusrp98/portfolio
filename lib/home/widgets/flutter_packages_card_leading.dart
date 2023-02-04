@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 
-class FlutterPackagesCard extends StatelessWidget {
-  const FlutterPackagesCard({super.key});
+class FlutterPackagesCardLeading extends StatelessWidget {
+  const FlutterPackagesCardLeading({super.key});
 
   @override
   Widget build(BuildContext context) {

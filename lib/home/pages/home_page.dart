@@ -4,7 +4,7 @@ import 'package:grid_point_4/grid_point_4.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio/flutter_packages/routes/flutter_packages_route.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
-import 'package:portfolio/home/widgets/flutter_packages_card.dart';
+import 'package:portfolio/home/widgets/flutter_packages_card_leading.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                   title: const Text('WORK'),
                 ),
                 WorkCard(
-                  leading: const FlutterPackagesCard(),
+                  leading: const FlutterPackagesCardLeading(),
                   work: PersonalInfo.flutterPackages,
                   onTap: () => context.push(
                     FlutterPackagesRoute.flutterPackagesPath,
