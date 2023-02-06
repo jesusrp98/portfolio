@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
+import 'package:portfolio/flutter_packages/models/package.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
-import 'package:pub_api_client/pub_api_client.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class FlutterPackageCard extends StatelessWidget {
-  final Widget leading;
-  final PubPackage package;
+  final Package package;
 
-  const FlutterPackageCard({
-    super.key,
-    required this.leading,
-    required this.package,
-  });
+  const FlutterPackageCard({super.key, required this.package});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +39,7 @@ class FlutterPackageCard extends StatelessWidget {
                               .onSecondaryContainer,
                           size: GridSpacing.s48,
                         ),
-                        child: leading,
+                        child: package.leading,
                       ),
                     ),
                   ),
