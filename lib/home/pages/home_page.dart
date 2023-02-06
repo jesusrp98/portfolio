@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:intl/intl.dart';
+import 'package:portfolio/flutter_packages/routes/flutter_packages_route.dart';
 import 'package:portfolio/home/widgets/about_card.dart';
+import 'package:portfolio/home/widgets/flutter_packages_card_leading.dart';
 import 'package:portfolio/home/widgets/header_card.dart';
 import 'package:portfolio/home/widgets/home_drawer.dart';
 import 'package:portfolio/home/widgets/journey_card.dart';
 import 'package:portfolio/home/widgets/resume_card.dart';
 import 'package:portfolio/home/widgets/section_header.dart';
+import 'package:portfolio/home/widgets/work_card.dart';
 import 'package:portfolio/utils/extensions/layout_phone_extension.dart';
 import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/widgets/contact_actions.dart';
@@ -14,7 +18,7 @@ import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
-  // static final _workSectionKey = GlobalKey();
+  static final _workSectionKey = GlobalKey();
   static final _aboutSectionKey = GlobalKey();
   static final _resumeSectionKey = GlobalKey();
 
@@ -44,10 +48,7 @@ class HomePage extends StatelessWidget {
               )
             : null,
         actions: const [
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: GridSpacing.s16),
-            child: ContactActions(),
-          ),
+          ContactActions(),
         ],
       ),
       drawer: context.isLayoutPhone
@@ -62,11 +63,18 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HeaderCard(),
-                // SectionHeader(
-                //   key: _workSectionKey,
-                //   leading: const Icon(Icons.verified_rounded),
-                //   title: const Text('WORK'),
-                // ),
+                SectionHeader(
+                  key: _workSectionKey,
+                  leading: const Icon(Icons.verified_rounded),
+                  title: const Text('WORK'),
+                ),
+                WorkCard(
+                  leading: const FlutterPackagesCardLeading(),
+                  work: PersonalInfo.flutterPackages,
+                  onTap: () => context.push(
+                    FlutterPackagesRoute.flutterPackagesPath,
+                  ),
+                ),
                 SectionHeader(
                   key: _aboutSectionKey,
                   leading: const Icon(Icons.favorite_rounded),
@@ -92,14 +100,14 @@ class HomePage extends StatelessWidget {
 
   void _onNavigationItemTap(BuildContext context, HomeTabs tab) {
     switch (tab) {
-      // case HomeTabs.work:
-      //   Scrollable.ensureVisible(
-      //     _workSectionKey.currentContext!,
-      //     curve: _kScrollAnimationCurve,
-      //     duration: _kScrollAnimationDuration,
-      //     alignment: _kScrollAnimationAlignment,
-      //   );
-      //   break;
+      case HomeTabs.work:
+        Scrollable.ensureVisible(
+          _workSectionKey.currentContext!,
+          curve: _kScrollAnimationCurve,
+          duration: _kScrollAnimationDuration,
+          alignment: _kScrollAnimationAlignment,
+        );
+        break;
       case HomeTabs.about:
         Scrollable.ensureVisible(
           _aboutSectionKey.currentContext!,
@@ -120,7 +128,7 @@ class HomePage extends StatelessWidget {
 }
 
 enum HomeTabs {
-  // work,
+  work,
   about,
   resume;
 

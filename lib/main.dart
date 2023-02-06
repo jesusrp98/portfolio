@@ -5,5 +5,5 @@ import 'package:portfolio/app.dart';
 void main() {
   usePathUrlStrategy();
 
-  runApp(const PortfolioApp());
+  return runApp(const PortfolioApp());
 }

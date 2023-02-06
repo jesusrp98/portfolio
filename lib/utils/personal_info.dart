@@ -1,7 +1,9 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:flutter/material.dart';
+import 'package:portfolio/flutter_packages/models/package.dart';
 import 'package:portfolio/home/models/experience.dart';
+import 'package:portfolio/home/models/work.dart';
 
 class PersonalInfo {
   const PersonalInfo._();
@@ -34,6 +36,56 @@ class PersonalInfo {
           ),
         ],
       );
+
+  static const flutterPackages = Work(
+    title: 'Flutter Packages',
+    subtitle:
+        'Collection of all my open-source packages for the Flutter framework.',
+    tags: [
+      'Flutter',
+      'Open Source',
+      'Community',
+    ],
+  );
+
+  static const packages = [
+    Package(
+      leading: Icon(Icons.expand_more_rounded),
+      name: 'expand_widget',
+      description:
+          'Ability to easily expand and retract a widget collection or text',
+    ),
+    Package(
+      leading: Icon(Icons.search_rounded),
+      name: 'search_page',
+      description:
+          'Fast and easy way to build a custom search experience in you app',
+    ),
+    Package(
+      leading: Icon(Icons.list_rounded),
+      name: 'row_item',
+      description:
+          'Display compat information by using two widgets separated inside a row widget.',
+    ),
+    Package(
+      leading: Icon(Icons.lightbulb_outline_rounded),
+      name: 'big_tip',
+      description:
+          'Display information to the user using a custom layout, that can be actionable',
+    ),
+    Package(
+      leading: Icon(Icons.interests_rounded),
+      name: 'adwaita_icons',
+      description:
+          'Package that contains all icons built for the Adwaita Theme.',
+    ),
+    Package(
+      leading: Icon(Icons.line_weight_rounded),
+      name: 'grid_point_4',
+      description:
+          'Package that helps to implements the 4-point grid system in Flutter.',
+    ),
+  ];
 
   static const about = [
     Experience(

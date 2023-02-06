@@ -34,28 +34,30 @@ class HeaderCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Greetings!',
-                        style: titleTextStyle,
-                      ),
-                      GridSpacing.gap16,
-                      Icon(
-                        Icons.waving_hand_outlined,
-                        color: Theme.of(context).colorScheme.onSurface,
-                        size: titleTextStyle?.fontSize,
-                      )
-                    ],
-                  ),
-                  Text(
-                    "I'm ${PersonalInfo.name}",
-                    style: titleTextStyle,
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Greetings!',
+                          style: titleTextStyle,
+                        ),
+                        GridSpacing.gap16,
+                        Icon(
+                          Icons.waving_hand_outlined,
+                          color: Theme.of(context).colorScheme.onSurface,
+                          size: titleTextStyle?.fontSize,
+                        )
+                      ],
+                    ),
+                    AutoSizeText(
+                      "I'm ${PersonalInfo.name}",
+                      style: titleTextStyle,
+                    ),
+                  ],
+                ),
               ),
               if (showHeaderImage)
                 Image.asset(
