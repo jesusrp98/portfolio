@@ -13,9 +13,9 @@ class WorkCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const WorkCard({
-    super.key,
     required this.leading,
     required this.work,
+    super.key,
     this.onTap,
   });
 

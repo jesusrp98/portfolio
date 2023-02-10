@@ -9,7 +9,7 @@ class ResponsiveLayout extends StatelessWidget {
 
   final Widget child;
 
-  const ResponsiveLayout({super.key, required this.child});
+  const ResponsiveLayout({required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {

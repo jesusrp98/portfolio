@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 class FlutterPackageCard extends StatelessWidget {
   final Package package;
 
-  const FlutterPackageCard({super.key, required this.package});
+  const FlutterPackageCard({required this.package, super.key});
 
   @override
   Widget build(BuildContext context) {

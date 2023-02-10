@@ -6,9 +6,9 @@ class SectionHeader extends StatelessWidget {
   final Widget title;
 
   const SectionHeader({
-    super.key,
     required this.leading,
     required this.title,
+    super.key,
   });
 
   @override

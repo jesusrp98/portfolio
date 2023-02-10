@@ -6,9 +6,9 @@ class DetailsTile extends StatelessWidget {
   final String title;
 
   const DetailsTile({
-    super.key,
     required this.leading,
     required this.title,
+    super.key,
   });
 
   factory DetailsTile.asset({

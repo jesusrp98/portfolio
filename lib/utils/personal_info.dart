@@ -164,6 +164,12 @@ class PersonalInfo {
 
   static const journey = [
     Experience(
+      imagePath: 'assets/images/savvy-navvy.jpg',
+      title: 'savvy navvy',
+      subtitle: 'Flutter Developer',
+      trailing: 'Currently',
+    ),
+    Experience(
       imagePath: 'assets/images/bejao.png',
       title: 'BeJao',
       subtitle: 'Flutter Developer',
@@ -208,7 +214,7 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/ronald_mcdonald.png',
+      imagePath: 'assets/images/ronald-mcdonald.png',
       title: 'Ronald McDonald Foundation',
       subtitle: 'Freelancer',
       trailing: '2020 - 2021',

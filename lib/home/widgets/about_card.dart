@@ -9,7 +9,7 @@ class AboutCard extends StatelessWidget {
 
   final Experience experience;
 
-  const AboutCard({super.key, required this.experience});
+  const AboutCard({required this.experience, super.key});
 
   @override
   Widget build(BuildContext context) {

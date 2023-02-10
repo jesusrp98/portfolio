@@ -12,8 +12,8 @@ class HomeDrawer extends StatelessWidget {
   final NavigationItemCallback onNavigationItemTap;
 
   const HomeDrawer({
-    super.key,
     required this.onNavigationItemTap,
+    super.key,
   });
 
   @override

@@ -15,9 +15,9 @@ class ExperienceTile extends StatelessWidget {
   final LeadingWidgetBuilder leadingBuilder;
 
   const ExperienceTile({
-    super.key,
     required this.experience,
     required this.leadingBuilder,
+    super.key,
   });
 
   @override

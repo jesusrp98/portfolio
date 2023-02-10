@@ -7,9 +7,9 @@ class HomeCard extends StatelessWidget {
   final Widget child;
 
   const HomeCard({
+    required this.child,
     super.key,
     this.padding,
-    required this.child,
   });
 
   static EdgeInsets resolvePadding(BuildContext context) =>

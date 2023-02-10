@@ -4,7 +4,7 @@ import 'package:grid_point_4/grid_point_4.dart';
 class DetailsTag extends StatelessWidget {
   final Widget child;
 
-  const DetailsTag({super.key, required this.child});
+  const DetailsTag({required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {

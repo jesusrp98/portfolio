@@ -8,7 +8,7 @@ class Experience {
   const Experience({
     required this.imagePath,
     required this.title,
-    required this.details,
+    this.details = const [],
     this.subtitle,
     this.trailing,
   });
