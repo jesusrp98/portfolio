@@ -49,7 +49,7 @@ class HeaderCard extends StatelessWidget {
                           Icons.waving_hand_outlined,
                           color: Theme.of(context).colorScheme.onSurface,
                           size: titleTextStyle?.fontSize,
-                        )
+                        ),
                       ],
                     ),
                     AutoSizeText(
@@ -63,7 +63,7 @@ class HeaderCard extends StatelessWidget {
                 Image.asset(
                   'assets/images/bongo-cat.gif',
                   height: headerImageHeight,
-                )
+                ),
             ],
           ),
           AutoSizeText.rich(

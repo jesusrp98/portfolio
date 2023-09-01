@@ -107,7 +107,6 @@ class HomePage extends StatelessWidget {
           duration: _kScrollAnimationDuration,
           alignment: _kScrollAnimationAlignment,
         );
-        break;
       case HomeTabs.about:
         Scrollable.ensureVisible(
           _aboutSectionKey.currentContext!,
@@ -115,7 +114,6 @@ class HomePage extends StatelessWidget {
           duration: _kScrollAnimationDuration,
           alignment: _kScrollAnimationAlignment,
         );
-        break;
       case HomeTabs.resume:
         Scrollable.ensureVisible(
           _resumeSectionKey.currentContext!,

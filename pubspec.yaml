@@ -14,14 +14,14 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   font_awesome_flutter: ^10.4.0
-  go_router: ^7.0.0
+  go_router: ^10.1.2
   grid_point_4: ^1.0.0
   intl: ^0.18.0
   layout: ^1.0.3
   url_launcher: ^6.1.10
 
 dev_dependencies:
-  very_good_analysis: ^4.0.0+1
+  very_good_analysis: ^5.1.0
 
 flutter:
   uses-material-design: true

@@ -59,7 +59,7 @@ class ExperienceTile extends StatelessWidget {
                 .textTheme
                 .titleMedium
                 ?.copyWith(fontWeight: FontWeight.normal),
-          )
+          ),
       ].separateWith(GridSpacing.gap8),
     );
   }

@@ -73,7 +73,7 @@ class FlutterPackageCard extends StatelessWidget {
                         Icon(
                           Icons.launch_rounded,
                           color: Theme.of(context).colorScheme.onSurface,
-                        )
+                        ),
                       ],
                     ),
                   ),

@@ -67,7 +67,7 @@ class WorkCard extends StatelessWidget {
                                     size: GridSpacing.s32,
                                     color:
                                         Theme.of(context).colorScheme.onSurface,
-                                  )
+                                  ),
                               ],
                             ),
                             GridSpacing.gap12,
@@ -90,11 +90,11 @@ class WorkCard extends StatelessWidget {
                                 child: Text(tag),
                               ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

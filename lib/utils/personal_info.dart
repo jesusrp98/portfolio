@@ -224,7 +224,7 @@ class PersonalInfo {
         'Released mobile app to both App Store and Google Play.',
         'Implemented real-time chat between users of the platform.',
         'Acted as a product manager and managed team of developers.',
-        'Used GitHub Actions to deploy web page to Firebase Hosting.'
+        'Used GitHub Actions to deploy web page to Firebase Hosting.',
       ],
     ),
     Experience(

@@ -57,7 +57,7 @@ class AboutCard extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
