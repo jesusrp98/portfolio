@@ -17,7 +17,7 @@ class FooterBar extends StatelessWidget {
         children: [
           TextButton.icon(
             style: TextButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.onBackground,
+              foregroundColor: Theme.of(context).colorScheme.onSurface,
             ),
             onPressed: () => launchUrlString(PortfolioUrls.portfolioGitHubPage),
             icon: const Icon(Icons.launch_rounded),

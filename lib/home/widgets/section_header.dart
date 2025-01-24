@@ -18,7 +18,7 @@ class SectionHeader extends StatelessWidget {
       children: [
         IconTheme.merge(
           data: IconThemeData(
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
             size: GridSpacing.s40,
           ),
           child: leading,

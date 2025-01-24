@@ -11,9 +11,9 @@ class DetailsTag extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(99),
-        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.04),
+        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.04),
         border: Border.all(
-          color: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
+          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
           width: 2,
         ),
       ),
