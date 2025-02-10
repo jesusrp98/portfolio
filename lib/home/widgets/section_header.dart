@@ -15,6 +15,7 @@ class SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      spacing: GridSpacing.s8,
       children: [
         IconTheme.merge(
           data: IconThemeData(
@@ -29,7 +30,7 @@ class SectionHeader extends StatelessWidget {
               ),
           child: title,
         ),
-      ].separateWith(GridSpacing.gap8),
+      ],
     );
   }
 }

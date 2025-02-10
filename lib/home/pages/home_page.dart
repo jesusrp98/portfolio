@@ -25,6 +25,7 @@ class HomePage extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: GridSpacing.s16,
               children: [
                 const HeaderCard(),
                 const SectionHeader(
@@ -50,7 +51,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const ResumeCard(),
                 const JourneyCard(),
-              ].separateWith(GridSpacing.gap16),
+              ],
             ),
             const FooterBar(),
           ],

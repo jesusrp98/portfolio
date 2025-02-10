@@ -18,6 +18,7 @@ class FlutterPackagesPage extends StatelessWidget {
         child: Column(
           children: [
             Column(
+              spacing: GridSpacing.s16,
               children: [
                 const WorkCard(
                   leading: FlutterPackagesCardLeading(),
@@ -25,7 +26,7 @@ class FlutterPackagesPage extends StatelessWidget {
                 ),
                 for (final package in PersonalInfo.packages)
                   FlutterPackageCard(package: package),
-              ].separateWith(GridSpacing.gap16),
+              ],
             ),
             const FooterBar(),
           ],

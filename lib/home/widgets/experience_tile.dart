@@ -24,6 +24,7 @@ class ExperienceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: GridSpacing.s8,
       children: [
         ListTile(
           contentPadding: EdgeInsets.zero,
@@ -60,7 +61,7 @@ class ExperienceTile extends StatelessWidget {
                 .titleMedium
                 ?.copyWith(fontWeight: FontWeight.normal),
           ),
-      ].separateWith(GridSpacing.gap8),
+      ],
     );
   }
 }

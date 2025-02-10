@@ -33,6 +33,7 @@ class HeaderCard extends StatelessWidget {
     return HomeCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: GridSpacing.s16,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,7 +99,7 @@ class HeaderCard extends StatelessWidget {
               ),
             ],
           ),
-        ].separateWith(GridSpacing.gap16),
+        ],
       ),
     );
   }
