@@ -4,7 +4,6 @@ import 'package:portfolio/flutter_packages/widgets/flutter_package_card.dart';
 import 'package:portfolio/home/widgets/flutter_packages_card_leading.dart';
 import 'package:portfolio/home/widgets/work_card.dart';
 import 'package:portfolio/utils/personal_info.dart';
-import 'package:portfolio/widgets/contact_actions.dart';
 import 'package:portfolio/widgets/footer_bar.dart';
 import 'package:portfolio/widgets/responsive_layout.dart';
 
@@ -14,11 +13,7 @@ class FlutterPackagesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: const [
-          ContactActions(),
-        ],
-      ),
+      appBar: AppBar(),
       body: ResponsiveLayout(
         child: Column(
           children: [

@@ -1,10 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
-import 'package:portfolio/home/widgets/details_tile.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/utils/personal_info.dart';
+import 'package:portfolio/utils/portfolio_urls.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HeaderCard extends StatelessWidget {
   const HeaderCard({super.key});
@@ -46,7 +49,7 @@ class HeaderCard extends StatelessWidget {
                         ),
                         GridSpacing.gap16,
                         Icon(
-                          Icons.waving_hand_outlined,
+                          Symbols.waving_hand_rounded,
                           color: Theme.of(context).colorScheme.onSurface,
                           size: titleTextStyle?.fontSize,
                         ),
@@ -74,32 +77,26 @@ class HeaderCard extends StatelessWidget {
             PersonalInfo.description2,
             style: descriptionTextStyle,
           ),
-          const Divider(),
-          Align(
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              runAlignment: WrapAlignment.center,
-              spacing: GridSpacing.s64,
-              runSpacing: GridSpacing.s24,
-              children: [
-                const DetailsTile(
-                  leading: Icon(Icons.person_rounded),
-                  title: 'He/Him',
-                ),
-                DetailsTile.asset(
-                  assetPath: 'assets/images/spanish.png',
-                  title: 'Spanish',
-                ),
-                DetailsTile.asset(
-                  assetPath: 'assets/images/english.png',
-                  title: 'English',
-                ),
-                DetailsTile.asset(
-                  assetPath: 'assets/images/german.png',
-                  title: 'German',
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: GridSpacing.s32,
+            children: [
+              IconButton(
+                tooltip: 'Email',
+                icon: const Icon(Icons.email_rounded),
+                onPressed: () => launchUrlString(PortfolioUrls.email),
+              ),
+              IconButton(
+                tooltip: 'LinkedIn',
+                icon: const FaIcon(FontAwesomeIcons.linkedin),
+                onPressed: () => launchUrlString(PortfolioUrls.linkedIn),
+              ),
+              IconButton(
+                tooltip: 'GitHub',
+                icon: const FaIcon(FontAwesomeIcons.github),
+                onPressed: () => launchUrlString(PortfolioUrls.gitHub),
+              ),
+            ],
           ),
         ].separateWith(GridSpacing.gap16),
       ),

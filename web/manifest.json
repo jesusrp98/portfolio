@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Jesus Rodriguez",
+    "short_name": "Jesus Rodriguez",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Portfolio page, with personal and professional details",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

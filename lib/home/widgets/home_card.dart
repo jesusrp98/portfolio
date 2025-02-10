@@ -21,8 +21,10 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 6,
+      surfaceTintColor: Theme.of(context).colorScheme.surfaceTint,
+      shadowColor: Colors.transparent,
       clipBehavior: Clip.antiAlias,
+      margin: EdgeInsets.zero,
       child: Padding(
         padding: padding ?? resolvePadding(context),
         child: child,
