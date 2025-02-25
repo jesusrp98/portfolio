@@ -36,7 +36,7 @@ jobs:
           channel: stable
 
       - name: Build web
-        run: flutter build web --release --web-renderer canvaskit
+        run: flutter build web --release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -54,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
