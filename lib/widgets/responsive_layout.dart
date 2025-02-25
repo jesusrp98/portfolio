@@ -3,7 +3,7 @@ import 'package:grid_point_4/grid_point_4.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   static const basePadding = EdgeInsets.only(top: GridSpacing.s24);
-  static const contentSize = 1200;
+  static const contentSize = 1300;
 
   final Widget child;
 

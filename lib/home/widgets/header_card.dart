@@ -1,12 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:portfolio/home/widgets/contact_button.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/utils/personal_info.dart';
 import 'package:portfolio/utils/portfolio_urls.dart';
+import 'package:portfolio/widgets/star_clipper.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class HeaderCard extends StatelessWidget {
@@ -14,93 +15,186 @@ class HeaderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showHeaderImage = context.breakpoint >= LayoutBreakpoint.sm;
-
-    final titleTextStyle = context.layout
-        .value(
-          xs: Theme.of(context).textTheme.headlineLarge,
-          md: Theme.of(context).textTheme.displayMedium,
-        )
-        ?.copyWith(fontWeight: FontWeight.w600);
-
-    final descriptionTextStyle = context.layout.value(
-      xs: Theme.of(context).textTheme.bodyLarge,
-      md: Theme.of(context).textTheme.headlineSmall,
+    final axis = context.layout.value(
+      md: Axis.horizontal,
+      xs: Axis.vertical,
     );
 
-    final headerImageHeight = context.layout.value<double>(xs: 96, md: 128);
+    final titleTextStyle = Theme.of(context).textTheme.displaySmall?.copyWith(
+          fontWeight: FontWeight.w500,
+        );
 
-    return HomeCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: GridSpacing.s16,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
+    final descriptionTextStyle =
+        Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            );
+
+    final body = Column(
+      crossAxisAlignment: axis == Axis.horizontal
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
+      spacing: GridSpacing.s16,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: axis == Axis.horizontal
+                    ? CrossAxisAlignment.start
+                    : CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: AutoSizeText(
                           'Greetings!',
                           style: titleTextStyle,
+                          maxLines: 1,
                         ),
-                        GridSpacing.gap16,
-                        Icon(
-                          Symbols.waving_hand_rounded,
-                          color: Theme.of(context).colorScheme.onSurface,
-                          size: titleTextStyle?.fontSize,
-                        ),
-                      ],
-                    ),
-                    AutoSizeText(
-                      "I'm ${PersonalInfo.name}",
-                      style: titleTextStyle,
-                    ),
-                  ],
-                ),
+                      ),
+                      GridSpacing.gap16,
+                      Icon(
+                        Symbols.waving_hand_rounded,
+                        color: Theme.of(context).colorScheme.onSurface,
+                        size: titleTextStyle?.fontSize,
+                        fill: 1,
+                      ),
+                    ],
+                  ),
+                  AutoSizeText(
+                    "I'm ${PersonalInfo.name}",
+                    style: titleTextStyle,
+                    maxLines: 1,
+                  ),
+                ],
               ),
-              if (showHeaderImage)
-                Image.asset(
-                  'assets/images/bongo-cat.gif',
-                  height: headerImageHeight,
-                ),
-            ],
-          ),
-          AutoSizeText.rich(
-            PersonalInfo.description1,
-            style: descriptionTextStyle,
-          ),
-          AutoSizeText.rich(
-            PersonalInfo.description2,
-            style: descriptionTextStyle,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            spacing: GridSpacing.s32,
-            children: [
-              IconButton(
-                tooltip: 'Email',
-                icon: const Icon(Icons.email_rounded),
-                onPressed: () => launchUrlString(PortfolioUrls.email),
+            ),
+          ],
+        ),
+        AutoSizeText.rich(
+          PersonalInfo.description1,
+          style: descriptionTextStyle,
+          textAlign: axis == Axis.vertical ? TextAlign.center : null,
+          maxLines: 2,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            if (axis == Axis.horizontal)
+              Text("Let's have a chat!", style: descriptionTextStyle),
+            Expanded(
+              child: Flex(
+                spacing:
+                    axis == Axis.horizontal ? GridSpacing.s12 : GridSpacing.s16,
+                mainAxisAlignment: MainAxisAlignment.end,
+                direction: axis,
+                children: [
+                  ContactButton(
+                    label: 'Email',
+                    style: descriptionTextStyle,
+                    onPressed: () => launchUrlString(PortfolioUrls.email),
+                    expand: axis == Axis.vertical,
+                  ),
+                  ContactButton(
+                    label: 'LinkedIn',
+                    style: descriptionTextStyle,
+                    onPressed: () => launchUrlString(PortfolioUrls.linkedIn),
+                    expand: axis == Axis.vertical,
+                  ),
+                  ContactButton(
+                    label: 'GitHub',
+                    style: descriptionTextStyle,
+                    onPressed: () => launchUrlString(PortfolioUrls.gitHub),
+                    expand: axis == Axis.vertical,
+                  ),
+                ],
               ),
-              IconButton(
-                tooltip: 'LinkedIn',
-                icon: const FaIcon(FontAwesomeIcons.linkedin),
-                onPressed: () => launchUrlString(PortfolioUrls.linkedIn),
-              ),
-              IconButton(
-                tooltip: 'GitHub',
-                icon: const FaIcon(FontAwesomeIcons.github),
-                onPressed: () => launchUrlString(PortfolioUrls.gitHub),
-              ),
-            ],
-          ),
+            ),
+          ],
+        ),
+      ],
+    );
+
+    return HomeCard(
+      padding: HomeCard.defaultPadding.copyWith(
+        right: axis == Axis.horizontal ? GridSpacing.s72 : null,
+      ),
+      shape: axis == Axis.horizontal ? const StadiumBorder() : null,
+      child: Flex(
+        direction: axis,
+        spacing: axis == Axis.horizontal ? GridSpacing.s32 : GridSpacing.s16,
+        children: [
+          const _RotatingProfileImage(),
+          if (axis == Axis.vertical) body else Expanded(child: body),
         ],
       ),
+    );
+  }
+}
+
+class _RotatingProfileImage extends StatefulWidget {
+  const _RotatingProfileImage();
+
+  @override
+  State<StatefulWidget> createState() => _RotatingProfileImageState();
+}
+
+class _RotatingProfileImageState extends State<_RotatingProfileImage>
+    with SingleTickerProviderStateMixin {
+  static const animationDuration = Duration(seconds: 24);
+
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: animationDuration,
+      vsync: this,
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    late final headerImageHeight =
+        context.layout.value<double>(xs: 197, md: 256);
+
+    return AnimatedBuilder(
+      animation: _controller,
+      child: Image.asset(
+        'assets/images/profile.jpg',
+        height: headerImageHeight,
+      ),
+      builder: (context, child) {
+        final clipper = StarClipper(
+          rotation: _controller.value,
+          innerRadiusRatio: .9,
+          cornerRadius: 16,
+          points: 16,
+        );
+
+        return CustomPaint(
+          foregroundPainter: StarBorderPainter(
+            borderColor: Theme.of(context).colorScheme.secondary,
+            clipper: clipper,
+            borderWidth: 8,
+          ),
+          child: ClipPath(
+            clipper: clipper,
+            child: child,
+          ),
+        );
+      },
     );
   }
 }

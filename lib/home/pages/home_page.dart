@@ -24,7 +24,6 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               spacing: GridSpacing.s16,
               children: [
                 const HeaderCard(),

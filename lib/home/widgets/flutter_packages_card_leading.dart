@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 class FlutterPackagesCardLeading extends StatelessWidget {
   const FlutterPackagesCardLeading({super.key});
@@ -18,36 +19,39 @@ class FlutterPackagesCardLeading extends StatelessWidget {
           ),
           child: FittedBox(
             fit: BoxFit.none,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.inventory_2_rounded),
-                    const Icon(Icons.public_rounded),
-                    const Icon(Icons.layers_rounded),
-                    const Icon(Icons.data_object_rounded),
-                    const Icon(Icons.bluetooth_rounded),
-                  ].separate(GridSpacing.s24),
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.contactless_rounded),
-                    const Icon(Icons.piano_rounded),
-                    const Icon(Icons.highlight_rounded),
-                    const Icon(Icons.android_rounded),
-                    const Icon(Icons.tune_rounded),
-                  ].separate(GridSpacing.s24),
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.ads_click_rounded),
-                    const Icon(Icons.usb_rounded),
-                    const Icon(Icons.location_on_rounded),
-                    const Icon(Icons.touch_app_rounded),
-                    const Icon(Icons.volunteer_activism_rounded),
-                  ].separate(GridSpacing.s24),
-                ),
-              ].separate(GridSpacing.s24),
+            child: IconTheme.merge(
+              data: const IconThemeData(fill: 1),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Symbols.inventory_2_rounded),
+                      const Icon(Symbols.public_rounded),
+                      const Icon(Symbols.layers_rounded),
+                      const Icon(Symbols.data_object_rounded),
+                      const Icon(Symbols.bluetooth_rounded),
+                    ].separate(GridSpacing.s24),
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Symbols.contactless_rounded),
+                      const Icon(Symbols.piano_rounded),
+                      const Icon(Symbols.highlight_rounded),
+                      const Icon(Symbols.android_rounded),
+                      const Icon(Symbols.tune_rounded),
+                    ].separate(GridSpacing.s24),
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Symbols.ads_click_rounded),
+                      const Icon(Symbols.usb_rounded),
+                      const Icon(Symbols.location_on_rounded),
+                      const Icon(Symbols.touch_app_rounded),
+                      const Icon(Symbols.volunteer_activism_rounded),
+                    ].separate(GridSpacing.s24),
+                  ),
+                ].separate(GridSpacing.s24),
+              ),
             ),
           ),
         ),

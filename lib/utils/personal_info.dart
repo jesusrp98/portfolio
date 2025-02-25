@@ -1,6 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:portfolio/flutter_packages/models/package.dart';
 import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/models/work.dart';
@@ -15,24 +16,11 @@ class PersonalInfo {
           TextSpan(text: "I'm a "),
           TextSpan(
             text: 'product developer',
-            style: TextStyle(fontWeight: FontWeight.w600),
+            style: TextStyle(fontWeight: FontWeight.w500),
           ),
           TextSpan(
             text:
                 ', focused on crafting intuitive and beautiful digital experiences.',
-          ),
-        ],
-      );
-
-  static TextSpan get description2 => const TextSpan(
-        children: [
-          TextSpan(text: 'With a background in '),
-          TextSpan(
-            text: 'Computer Engineering',
-            style: TextStyle(fontWeight: FontWeight.w600),
-          ),
-          TextSpan(
-            text: ", I've always have had a passion for product design.",
           ),
         ],
       );
@@ -50,37 +38,37 @@ class PersonalInfo {
 
   static const packages = [
     Package(
-      leading: Icon(Icons.expand_more_rounded),
+      leading: Icon(Symbols.expand_more_rounded),
       name: 'expand_widget',
       description:
           'Ability to easily expand and retract a widget collection or text',
     ),
     Package(
-      leading: Icon(Icons.search_rounded),
+      leading: Icon(Symbols.search_rounded),
       name: 'search_page',
       description:
           'Fast and easy way to build a custom search experience in you app',
     ),
     Package(
-      leading: Icon(Icons.list_rounded),
+      leading: Icon(Symbols.list_rounded),
       name: 'row_item',
       description:
           'Display compat information by using two widgets separated inside a row widget.',
     ),
     Package(
-      leading: Icon(Icons.lightbulb_outline_rounded),
+      leading: Icon(Symbols.lightbulb_outline_rounded),
       name: 'big_tip',
       description:
           'Display information to the user using a custom layout, that can be actionable',
     ),
     Package(
-      leading: Icon(Icons.interests_rounded),
+      leading: Icon(Symbols.interests_rounded),
       name: 'adwaita_icons',
       description:
           'Package that contains all icons built for the Adwaita Theme.',
     ),
     Package(
-      leading: Icon(Icons.line_weight_rounded),
+      leading: Icon(Symbols.line_weight_rounded),
       name: 'grid_point_4',
       description:
           'Package that helps to implements the 4-point grid system in Flutter.',

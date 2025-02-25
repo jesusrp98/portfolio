@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
+import 'package:layout/layout.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:portfolio/utils/extensions/layout_phone_extension.dart';
 import 'package:portfolio/utils/portfolio_urls.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -10,11 +10,17 @@ class FooterBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final axis = context.layout.value(
+      md: Axis.horizontal,
+      xs: Axis.vertical,
+    );
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: GridSpacing.s16),
       child: Flex(
-        direction: context.isLayoutPhone ? Axis.vertical : Axis.horizontal,
+        direction: axis,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        spacing: GridSpacing.s12,
         children: [
           TextButton.icon(
             style: TextButton.styleFrom(
@@ -25,7 +31,6 @@ class FooterBar extends StatelessWidget {
             icon: const Icon(Symbols.launch_rounded),
             label: const Text('This page is open source!'),
           ),
-          if (context.isLayoutPhone) GridSpacing.gap12,
           TextButton.icon(
             style: TextButton.styleFrom(
               foregroundColor: Theme.of(context).textTheme.labelLarge?.color,

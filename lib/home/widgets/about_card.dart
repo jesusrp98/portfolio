@@ -32,7 +32,7 @@ class AboutCard extends StatelessWidget {
                 ),
               Expanded(
                 child: Padding(
-                  padding: HomeCard.resolvePadding(context),
+                  padding: HomeCard.defaultPadding,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:portfolio/home/models/work.dart';
 import 'package:portfolio/home/widgets/details_tag.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
@@ -41,7 +42,7 @@ class WorkCard extends StatelessWidget {
                   ),
                 Expanded(
                   child: Padding(
-                    padding: HomeCard.resolvePadding(context),
+                    padding: HomeCard.defaultPadding,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +64,7 @@ class WorkCard extends StatelessWidget {
                                 ),
                                 if (onTap != null)
                                   Icon(
-                                    Icons.chevron_right_rounded,
+                                    Symbols.chevron_right_rounded,
                                     size: GridSpacing.s32,
                                     color:
                                         Theme.of(context).colorScheme.onSurface,
