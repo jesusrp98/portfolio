@@ -2,96 +2,110 @@ import 'package:flutter/material.dart';
 import 'package:grid_point_4/grid_point_4.dart';
 import 'package:layout/layout.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:portfolio/home/models/work.dart';
+import 'package:portfolio/home/models/experience.dart';
 import 'package:portfolio/home/widgets/details_tag.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 
 class WorkCard extends StatelessWidget {
   static const _minImageHeight = 256.0;
 
-  final Widget leading;
-  final Work work;
-  final VoidCallback? onTap;
+  final Experience experience;
 
   const WorkCard({
-    required this.leading,
-    required this.work,
+    required this.experience,
     super.key,
-    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final verticalLayout = context.breakpoint == LayoutBreakpoint.xs;
+
     return HomeCard(
       padding: EdgeInsets.zero,
       child: Stack(
         children: [
           IntrinsicHeight(
-            child: Row(
+            child: Flex(
+              direction: verticalLayout ? Axis.vertical : Axis.horizontal,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                if (context.breakpoint != LayoutBreakpoint.xs)
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: SizedBox(
-                      width: (MediaQuery.of(context).size.width / 3)
-                          .clamp(0, _minImageHeight * 1.5),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(GridSpacing.s12),
+                  child: ColoredBox(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .secondaryContainer
+                        .withValues(alpha: 0.4),
+                    child: Image.asset(
+                      experience.imagePath,
                       height: _minImageHeight,
-                      child: leading,
+                      width: _minImageHeight * 1.3,
+                      fit: BoxFit.contain,
                     ),
                   ),
+                ),
                 Expanded(
                   child: Padding(
                     padding: HomeCard.defaultPadding,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    work.title,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineMedium
-                                        ?.copyWith(fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                                if (onTap != null)
-                                  Icon(
-                                    Symbols.chevron_right_rounded,
-                                    size: GridSpacing.s32,
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
-                                  ),
-                              ],
+                            Expanded(
+                              child: Text(
+                                experience.title,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium
+                                    ?.copyWith(fontWeight: FontWeight.w500),
+                              ),
                             ),
-                            GridSpacing.gap12,
-                            Text(
-                              work.subtitle,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium
-                                  ?.copyWith(fontWeight: FontWeight.normal),
-                            ),
-                          ],
-                        ),
-                        GridSpacing.gap12,
-                        Wrap(
-                          spacing: GridSpacing.s12,
-                          runSpacing: GridSpacing.s12,
-                          children: [
-                            for (final tag in work.tags)
+                            if (experience.trailing != null)
                               DetailsTag(
-                                child: Text(tag),
+                                child: Row(
+                                  spacing: GridSpacing.s8,
+                                  children: [
+                                    Text(experience.trailing!),
+                                    if (experience.onTap != null)
+                                      const Icon(Symbols.launch_rounded),
+                                  ],
+                                ),
                               ),
                           ],
                         ),
+                        GridSpacing.gap4,
+                        if (experience.subtitle != null)
+                          Text(
+                            experience.subtitle!,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.normal),
+                          ),
+                        if (experience.details.isNotEmpty) ...[
+                          GridSpacing.gap16,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: GridSpacing.s8,
+                            children: [
+                              for (final task in experience.details)
+                                Text(
+                                  '· $task',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSurfaceVariant,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                            ],
+                          ),
+                        ],
                       ],
                     ),
                   ),
@@ -103,7 +117,7 @@ class WorkCard extends StatelessWidget {
             child: Material(
               type: MaterialType.transparency,
               child: InkWell(
-                onTap: onTap,
+                onTap: experience.onTap,
               ),
             ),
           ),

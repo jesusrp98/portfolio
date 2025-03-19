@@ -24,12 +24,11 @@ class ExperienceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: GridSpacing.s16,
+      spacing: GridSpacing.s8,
       children: [
         ListTile(
           contentPadding: EdgeInsets.zero,
           leading: leadingBuilder(context, experience.imagePath),
-          horizontalTitleGap: 20,
           title: AutoSizeText(
             experience.title,
             maxLines: 2,
@@ -54,20 +53,14 @@ class ExperienceTile extends StatelessWidget {
                 )
               : null,
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: GridSpacing.s8,
-          children: [
-            for (final task in experience.details)
-              Text(
-                '· $task',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.normal),
-              ),
-          ],
-        ),
+        for (final task in experience.details)
+          Text(
+            '· $task',
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium
+                ?.copyWith(fontWeight: FontWeight.normal),
+          ),
       ],
     );
   }

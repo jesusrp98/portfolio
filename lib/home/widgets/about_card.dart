@@ -13,23 +13,26 @@ class AboutCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final verticalLayout = context.breakpoint == LayoutBreakpoint.xs;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: _minImageHeight),
       child: HomeCard(
         padding: EdgeInsets.zero,
         child: IntrinsicHeight(
-          child: Row(
+          child: Flex(
+            direction: verticalLayout ? Axis.vertical : Axis.horizontal,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              if (context.breakpoint != LayoutBreakpoint.xs)
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    experience.imagePath,
-                    width: _minImageHeight,
-                    fit: BoxFit.cover,
-                  ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  experience.imagePath,
+                  width: _minImageHeight,
+                  height: _minImageHeight * (verticalLayout ? 2 : 0),
+                  fit: BoxFit.cover,
                 ),
+              ),
               Expanded(
                 child: Padding(
                   padding: HomeCard.defaultPadding,
@@ -51,7 +54,12 @@ class AboutCard extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium
-                                ?.copyWith(fontWeight: FontWeight.normal),
+                                ?.copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSurfaceVariant,
+                                  fontWeight: FontWeight.normal,
+                                ),
                           ),
                       ].separateWith(GridSpacing.gap12),
                     ],

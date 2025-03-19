@@ -1,10 +1,9 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:portfolio/flutter_packages/models/package.dart';
 import 'package:portfolio/home/models/experience.dart';
-import 'package:portfolio/home/models/work.dart';
+import 'package:portfolio/utils/portfolio_urls.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class PersonalInfo {
   const PersonalInfo._();
@@ -25,59 +24,11 @@ class PersonalInfo {
         ],
       );
 
-  static const flutterPackages = Work(
-    title: 'Flutter Packages',
-    subtitle:
-        'Collection of all my open-source packages for the Flutter framework.',
-    tags: [
-      'Flutter',
-      'Open Source',
-      'Community',
-    ],
-  );
-
-  static const packages = [
-    Package(
-      leading: Icon(Symbols.expand_more_rounded),
-      name: 'expand_widget',
-      description:
-          'Ability to easily expand and retract a widget collection or text',
-    ),
-    Package(
-      leading: Icon(Symbols.search_rounded),
-      name: 'search_page',
-      description:
-          'Fast and easy way to build a custom search experience in you app',
-    ),
-    Package(
-      leading: Icon(Symbols.list_rounded),
-      name: 'row_item',
-      description:
-          'Display compat information by using two widgets separated inside a row widget.',
-    ),
-    Package(
-      leading: Icon(Symbols.lightbulb_outline_rounded),
-      name: 'big_tip',
-      description:
-          'Display information to the user using a custom layout, that can be actionable',
-    ),
-    Package(
-      leading: Icon(Symbols.interests_rounded),
-      name: 'adwaita_icons',
-      description:
-          'Package that contains all icons built for the Adwaita Theme.',
-    ),
-    Package(
-      leading: Icon(Symbols.line_weight_rounded),
-      name: 'grid_point_4',
-      description:
-          'Package that helps to implements the 4-point grid system in Flutter.',
-    ),
-  ];
+  static const description2 = "Let's have a chat!";
 
   static const about = [
     Experience(
-      imagePath: 'assets/images/profile.jpg',
+      imagePath: 'assets/images/paris.png',
       title: 'Hello, World!',
       details: [
         "I've been playing with computers ever since I was little, learning mostly on my own.",
@@ -92,29 +43,22 @@ class PersonalInfo {
         'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019.',
       ],
     ),
-    Experience(
-      imagePath: 'assets/images/food.jpg',
-      title: 'Excellent cooker',
-      details: [
-        "Who doesn't love a good-looking and spongy vegan banana bread?",
-        "Also, don't get me started on Thai food.",
-      ],
-    ),
   ];
 
-  static const resume = [
+  static const skills = [
     Experience(
-      imagePath: 'assets/images/flutter.jpg',
+      imagePath: 'assets/images/flutter.png',
       title: 'Flutter',
       details: [
         'Realized complex designs and fluent animations.',
-        'Deploy Flutter features into existing native mobile apps.',
+        'Deployed Flutter features into existing native mobile apps.',
         'Worked with local and push notifications on both iOS and Android.',
         'Implemented complex navigation systems, with deep linking support.',
+        'Added custom platform-specific features and views.',
       ],
     ),
     Experience(
-      imagePath: 'assets/images/figma.jpg',
+      imagePath: 'assets/images/figma.png',
       title: 'Figma',
       details: [
         'Implemented complete design systems.',
@@ -123,107 +67,121 @@ class PersonalInfo {
       ],
     ),
     Experience(
-      imagePath: 'assets/images/firebase.jpg',
+      imagePath: 'assets/images/firebase.png',
       title: 'Firebase',
       details: [
         'Played with offline data persistence.',
         'Made extensive use of Firestore and all its features.',
         'Worked with custom Firebase Functions using TypeScript.',
+        'Implemented push notification support with Firebase Messaging.',
       ],
     ),
     Experience(
-      imagePath: 'assets/images/amplitude.jpg',
+      imagePath: 'assets/images/amplitude.png',
       title: 'Amplitude',
       details: [
-        'Implemented full analytics system on mobile apps.',
-        'Made user behaviour dictate  the app development.',
+        'Made user behaviour dictate the app development.',
+        'Integrated custom events to monitor feature usage.',
+        'Tracked user engagement and retention metrics effectively.',
+        'Analyzed data to improve user experience and app performance.',
       ],
     ),
     Experience(
-      imagePath: 'assets/images/uco.jpg',
+      imagePath: 'assets/images/uco.png',
       title: 'Computer Engineer',
       details: [
+        'Created local ML models using Python.',
         'Learned the fundamentals of ML and AI.',
         'Collaborated with local Open Source Group.',
         'Experienced low level programming with C and C++.',
+        'Programmed low-level vision systems using OpenCV.',
       ],
     ),
   ];
 
-  static const journey = [
+  static final works = [
     Experience(
-      imagePath: 'assets/images/savvy-navvy.jpg',
-      title: 'savvy navvy',
-      subtitle: 'Flutter Developer',
-      trailing: 'Currently',
-    ),
-    Experience(
-      imagePath: 'assets/images/bejao.png',
-      title: 'BeJao',
-      subtitle: 'Flutter Developer',
-      trailing: '2022',
+      imagePath: 'assets/images/aucorsa.png',
+      title: 'Aucorsa GO!',
+      subtitle: 'Public transportation app',
+      trailing: '2024',
       details: [
-        'Implemented complex multimedia-powered exercice guide experience.',
-        'Helped to design and develop custom dynamic Material theme.',
+        'Developed using Flutter multi-platform framework.',
+        'Offers real-time data about public transportation in the city of Cordoba, Spain.',
+        'Save your favorite bus stops for quick access.',
+        'Powerful search and filter functionality.',
+        'Developed as an open-source project available on GitHub.',
+      ],
+      onTap: () => launchUrlString(PortfolioUrls.aucorsaGoAppStore),
+    ),
+    const Experience(
+      imagePath: 'assets/images/octopus.png',
+      title: 'IDEAVI',
+      subtitle: 'Museum-centric cultural app',
+      trailing: '2020',
+      details: [
+        'Developed using Flutter multi-platform framework.',
+        'Created as a Bachelor Thesis with the University of Cordoba.',
+        'Tested with real users in the Museum of Archeology of Cordoba.',
+        'Scan QR codes in order to get more details about catalogue pieces.',
+        'Implements map navigation and audio guides.',
       ],
     ),
-    Experience(
-      imagePath: 'assets/images/fave.jpg',
-      title: 'Fave',
-      subtitle: 'Flutter Developer',
-      trailing: '2022',
-      details: [
-        'Implemented complex social media features, like real-time chat and news feed.',
-        'Worked hand-by-hand with the design people when developing new features.',
-        'Improved local and push notifications on both iOS and Android.',
-        'Reworked navigation system, in order to support deep links.',
-      ],
-    ),
-    Experience(
-      imagePath: 'assets/images/reflectly.jpg',
-      title: 'Reflectly',
-      subtitle: 'Flutter Developer',
-      trailing: '2021 - 2022',
-      details: [
-        'Used Firebase to store user data, and making it accessible offline.',
-        'Implemented complex designs and fluent animations.',
-        'Developed new features using low-level Flutter.',
-        'Researched user data with Amplitude analytics.',
-      ],
-    ),
-    Experience(
-      imagePath: 'assets/images/eyeem.jpg',
-      title: 'EyeEm',
-      subtitle: 'Flutter Developer',
-      trailing: '2020 - 2021',
-      details: [
-        'Developed new features in Flutter & deploy them to existing native mobile apps.',
-        'Managed app releases through production channels.',
-      ],
-    ),
-    Experience(
-      imagePath: 'assets/images/ronald-mcdonald.png',
+    const Experience(
+      imagePath: 'assets/images/cherry.png',
       title: 'Ronald McDonald Foundation',
       subtitle: 'Freelancer',
-      trailing: '2020 - 2021',
+      trailing: '2020',
       details: [
         'Used Firebase service to store user information.',
         'Developed mobile app and CMS web page using Flutter.',
-        'Released mobile app to both App Store and Google Play.',
         'Implemented real-time chat between users of the platform.',
         'Acted as a product manager and managed team of developers.',
         'Used GitHub Actions to deploy web page to Firebase Hosting.',
       ],
     ),
     Experience(
-      imagePath: 'assets/images/wealize.jpg',
-      title: 'Wealize',
-      subtitle: 'Full-Stack Developer',
-      trailing: '2019 - 2020',
+      imagePath: 'assets/images/packages.png',
+      title: 'Flutter Packages',
+      subtitle: 'Open source libraries',
+      trailing: 'Ongoing',
       details: [
-        'Developed React-based frontend for chatbot management system.',
-        'Worked on IBM Watson-based NLP systems.',
+        'expand_widget: A package to easily expand and retract widget collections or text.',
+        'search_page: A fast and easy way to build custom search experiences in apps.',
+        'big_tip: Displays actionable information to users using custom layouts.',
+        'adwaita_icons: Contains all icons built for the Adwaita Theme.',
+        'row_item: Displays compatibility information using two widgets in a row.',
+        'grid_point_4: Implements the 4-point grid system in Flutter.',
       ],
+      onTap: () => launchUrlString(PortfolioUrls.flutterPackages),
+    ),
+    Experience(
+      imagePath: 'assets/images/cherry.png',
+      title: 'SpaceX GO!',
+      subtitle: 'Rocket launch tracker app',
+      trailing: '2018',
+      details: [
+        'Developed using Flutter multi-platform framework.',
+        'Built with simplicity and ease of use in mind.',
+        'Collects essential information about SpaceX: launches, vehicles, and more.',
+        'Offers a great one-handed user experience following Material Design guidelines.',
+        'Developed as an open-source project available on GitHub.',
+      ],
+      onTap: () => launchUrlString(PortfolioUrls.cherryGitHub),
+    ),
+    Experience(
+      imagePath: 'assets/images/hamilton.png',
+      title: 'Hamilton',
+      subtitle: 'Matrix calculator app',
+      trailing: '2017',
+      details: [
+        'Developed using Java native Android tooling.',
+        'Used JAMA algebra library for matrix computations.',
+        'Performs over 15 matrix operations in a simple and intuitive way.',
+        'Followed Material Design guidelines for a clean and elegant design.',
+        'Developed as an open-source project available on GitHub.',
+      ],
+      onTap: () => launchUrlString(PortfolioUrls.hamiltonGitHub),
     ),
   ];
 }

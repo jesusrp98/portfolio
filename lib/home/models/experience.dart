@@ -4,6 +4,7 @@ class Experience {
   final List<String> details;
   final String? subtitle;
   final String? trailing;
+  final void Function()? onTap;
 
   const Experience({
     required this.imagePath,
@@ -11,5 +12,6 @@ class Experience {
     this.details = const [],
     this.subtitle,
     this.trailing,
+    this.onTap,
   });
 }

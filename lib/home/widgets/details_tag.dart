@@ -9,22 +9,26 @@ class DetailsTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(99),
-        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.04),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-          width: 2,
-        ),
+      decoration: ShapeDecoration(
+        shape: const StadiumBorder(),
+        color: Theme.of(context).colorScheme.secondaryContainer,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: GridSpacing.s12,
           vertical: GridSpacing.s4,
         ),
-        child: DefaultTextStyle.merge(
-          style: Theme.of(context).textTheme.titleMedium,
-          child: child,
+        child: IconTheme.merge(
+          data: IconThemeData(
+            color: Theme.of(context).colorScheme.onSecondaryContainer,
+            size: GridSpacing.s20,
+          ),
+          child: DefaultTextStyle.merge(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSecondaryContainer,
+                ),
+            child: child,
+          ),
         ),
       ),
     );

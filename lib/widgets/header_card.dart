@@ -6,6 +6,7 @@ import 'package:material_symbols_icons/symbols.dart';
 import 'package:portfolio/home/widgets/contact_button.dart';
 import 'package:portfolio/home/widgets/home_card.dart';
 import 'package:portfolio/utils/personal_info.dart';
+
 import 'package:portfolio/utils/portfolio_urls.dart';
 import 'package:portfolio/widgets/star_clipper.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -83,7 +84,7 @@ class HeaderCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             if (axis == Axis.horizontal)
-              Text(PersonalInfo.description2, style: descriptionTextStyle),
+              Text("Let's have a chat!", style: descriptionTextStyle),
             Expanded(
               child: Flex(
                 spacing:
@@ -172,7 +173,7 @@ class _RotatingProfileImageState extends State<_RotatingProfileImage>
     return AnimatedBuilder(
       animation: _controller,
       child: Image.asset(
-        'assets/images/profile.png',
+        'assets/images/profile_2.png',
         height: headerImageHeight,
       ),
       builder: (context, child) {
@@ -187,7 +188,7 @@ class _RotatingProfileImageState extends State<_RotatingProfileImage>
           foregroundPainter: StarBorderPainter(
             borderColor: Theme.of(context).colorScheme.secondary,
             clipper: clipper,
-            borderWidth: 8,
+            borderWidth: GridSpacing.s8,
           ),
           child: ClipPath(
             clipper: clipper,
