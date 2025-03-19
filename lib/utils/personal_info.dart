@@ -128,7 +128,7 @@ class PersonalInfo {
       ],
     ),
     const Experience(
-      imagePath: 'assets/images/cherry.png',
+      imagePath: 'assets/images/phobos.png',
       title: 'Ronald McDonald Foundation',
       subtitle: 'Freelancer',
       trailing: '2020',

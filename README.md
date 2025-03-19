@@ -1,24 +1,30 @@
-<img align="right" src="https://raw.githubusercontent.com/jesusrp98/portfolio/main/assets/images/bongo-cat.gif" width="200">
-  
+<img align="right" src="https://raw.githubusercontent.com/jesusrp98/portfolio/main/assets/images/profile.png" width="200">
+
 <h1>
   Greetings 👋
-  
+
   I'm Jesus Rodriguez
 </h1>
 
 - 💻 Working as a Flutter freelancer since 2020
-- 👨‍👩‍👧‍👦 [GDG Córdoba](https://twitter.com/GDGCordobaESP) co-organizer
 - 👨‍🎓 Computer Engineer
-- ⚾ Playing with [Flutter](https://flutter.dev) since 2018
-- 📐 UX/UI design as a hobby 
+- 📱 Mobile app developer since 2017
+- 📐 UX/UI design as a hobby
+- 🎷 Saxophone player
 
-<img alt="GitHub profile" src="https://github-readme-stats.vercel.app/api?username=jesusrp98&show_icons=true&count_private=true&hide_border=true&theme=transparent&custom_title=Stats" />
+## Download & install
 
-## Getting Started
+First, clone the repository with the 'clone' command, or just download the zip.
 
-This project is a starting point for a Dart [package](https://flutter.io/developing-packages/), a library module containing code that can be shared easily across multiple Flutter or Dart projects.
+```
+$ git clone git@github.com:jesusrp98/portfolio.git
+```
 
-For help getting started with Flutter, view our [online documentation](https://flutter.io/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
+Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/get-started/editor/). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/get-started/install/).
+
+Install dependencies from pubspec.yaml by running `flutter packages get` from the project root (see [using packages documentation](https://flutter.dev/using-packages/#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
+
+There you go, you can now open & edit the project. Enjoy!
 
 ## Built with
 
@@ -26,9 +32,6 @@ For help getting started with Flutter, view our [online documentation](https://f
 - [Android Studio](https://developer.android.com/studio/index.html/) - Tools for building apps on every type of Android device.
 - [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
 
-## Authors
-
-- **Jesús Rodríguez** - you can find me on [GitHub](https://github.com/jesusrp98), [Twitter](https://twitter.com/jesusrp98) & [Reddit](https://www.reddit.com/user/jesusrp98).
 
 ## License
 
