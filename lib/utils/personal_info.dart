@@ -43,6 +43,14 @@ class PersonalInfo {
         'Helped with the organization of the first Flutter-exclusive meetup - FlutterConf - back in 2019.',
       ],
     ),
+    Experience(
+      imagePath: 'assets/images/sax.png',
+      title: 'Saxophone player',
+      details: [
+        'Always been a swing and jazz lover, and I play the saxophone in my free time.',
+        'I enjoy playing music with friends and family, and I believe it brings people together.',
+      ],
+    ),
   ];
 
   static const skills = [
